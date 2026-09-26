@@ -144,6 +144,11 @@
             gap: 12px;
             align-items: center;
             padding-top: 4px;
+            position: relative;
+        }
+
+        .thumb-hint {
+            display: none;
         }
 
         .thumb {
@@ -157,6 +162,10 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
             transition: all 0.2s ease;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 1;
         }
 
         .thumb.active {
@@ -185,6 +194,8 @@
             color: white;
             font-size: 22px;
             background: rgba(0, 0, 0, 0.18);
+            pointer-events: none;
+            z-index: 2;
         }
 
         .main-image-shell {
@@ -235,6 +246,9 @@
             display: block;
             border-radius: 14px;
             background: #000;
+            max-height: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         .fav-button {
@@ -744,8 +758,16 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, rgba(26,35,126,0.12), rgba(245,124,0,0.1));
-            font-size: 1.6rem;
             margin-bottom: 12px;
+            overflow: hidden;
+            padding: 8px;
+        }
+
+        .feature-card .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .feature-card h4 {
@@ -984,7 +1006,46 @@
                 flex-direction: row;
                 overflow-x: auto;
                 justify-content: flex-start;
-                padding-bottom: 6px;
+                padding-bottom: 8px;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(26,35,126,0.38) rgba(26,35,126,0.05);
+            }
+
+            .thumbs::after {
+                content: "→";
+                position: sticky;
+                right: 6px;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 28px;
+                height: 68px;
+                border-radius: 10px;
+                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(17,26,79,0.15) 100%);
+                color: var(--brand-blue);
+                font-size: 1.2rem;
+                font-weight: 900;
+                flex-shrink: 0;
+                pointer-events: none;
+            }
+
+            .thumb-hint {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 8px;
+                margin-top: 6px;
+                color: var(--muted-text);
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.02em;
+            }
+
+            .thumb-hint::before {
+                content: "↔";
+                font-size: 0.9rem;
+                color: var(--brand-blue);
             }
 
             .main-image-shell {
@@ -1044,6 +1105,15 @@
                 width: 68px;
                 height: 68px;
                 flex-shrink: 0;
+            }
+
+            .product-shot {
+                min-height: 260px;
+                height: 100%;
+            }
+
+            .main-image-shell {
+                min-height: 300px;
             }
 
             .pack-card {
@@ -1108,6 +1178,7 @@
                         <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png" alt="Video de percarbonato" />
                     </button>
                 </div>
+                <div class="thumb-hint" aria-hidden="true">Desliza para ver más</div>
 
                 <div class="main-image-shell">
                     <div class="product-shot">
@@ -1117,11 +1188,7 @@
                 </div>
             </section>
 
-            <section class="panel product-panel" aria-labelledby="producto-title">
-                <div class="product-price-row">
-                    <div class="price">$12.990</div>
-                    <div class="price-note">por 1 kg</div>
-                </div>
+            <section class="panel product-panel" aria-labelledby="producto-title">                
 
                 <h2 id="producto-title" style="font-size: 2rem; color: var(--brand-blue); margin-bottom: 8px;">Percarbonato de Sodio</h2>
                 <p style="color: var(--muted-text); margin-bottom: 8px; font-size: 1.02rem;">
@@ -1176,25 +1243,33 @@
             <h3 class="section-title">¿Por qué elegir oxígeno activo?</h3>
             <div class="feature-cards">
                 <article class="feature-card">
-                    <div class="icon">🧼</div>
+                    <div class="icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png" alt="Quita manchas difíciles" />
+                    </div>
                     <h4>Quita manchas difíciles</h4>
                     <p>Elimina manchas de vino, café, sangre, grasa, sudor y suciedad acumulada en telas.</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="icon">🌿</div>
+                    <div class="icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono detergente.png" alt="Más seguro y ecológico" />
+                    </div>
                     <h4>Más seguro y ecológico</h4>
                     <p>Blanquea sin cloro, cuida tus prendas y ayuda a mantener un enfoque más responsable.</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="icon">🧺</div>
+                    <div class="icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png" alt="Ideal para todo tipo de ropa" />
+                    </div>
                     <h4>Ideal para todo tipo de ropa</h4>
                     <p>Funciona muy bien en ropa blanca y en prendas de color resistente.</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="icon">💡</div>
+                    <div class="icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png" alt="Económico y práctico" />
+                    </div>
                     <h4>Económico y práctico</h4>
                     <p>Un formato de 1 kg que rinde mucho y facilita la rutina de limpieza diaria.</p>
                 </article>
@@ -1205,9 +1280,9 @@
             <h3 class="section-title">Referencia rápida</h3>
             <div class="three-pod-grid">
                 <article class="pod-card">
-                    <span class="pod-label">Hook</span>
+                    <span class="pod-label">¿Qué es?</span>
                     <h4>La limpieza que hace sentir la diferencia</h4>
-                    <p>Un blanqueador potente, práctico y más responsable para recuperar superficies, tejidos y detalles cotidianos sin esfuerzo extra.</p>
+                    <p>Un blanqueador potente, quitamanchas, práctico ysirve para recuperar superficies, tejidos , juntas de cerámica, blanquear utensilios de cocina sin esfuerzo extra.</p>
                 </article>
 
                 <article class="pod-card">
@@ -1224,7 +1299,7 @@
                     <ul>
                         <li>Formato de 1 kg, rendidor y fácil de usar.</li>
                         <li>Ideal para lavadora, remojo y limpieza general.</li>
-                        <li>Fabricado en Chile para uso doméstico.</li>
+                        <li>Oxigeno que se activa para facilitar la eliminación de manchas.</li>
                     </ul>
                 </article>
             </div>
