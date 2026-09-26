@@ -714,7 +714,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 36px 18px 42px;
+                padding: 26px 16px 36px;
             }
 
             .hero-shell {
@@ -722,22 +722,47 @@
                 gap: 18px;
             }
 
-            .hero h1 {
-                font-size: 32px;
+            .hero-copy {
                 max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.2rem, 9vw, 3rem);
+                line-height: 1.02;
+                max-width: 100%;
+                letter-spacing: -0.05em;
             }
 
             .hero p {
                 font-size: 16px;
                 line-height: 1.5;
+                margin-bottom: 22px;
             }
 
             .trust-badges {
                 justify-content: flex-start;
+                gap: 8px;
             }
 
-            .hero-panel {
-                padding: 16px;
+            .trust-badge {
+                font-size: 12px;
+                padding: 9px 12px;
+            }
+
+            .hero-visual {
+                min-height: 220px;
+                padding: 0;
+            }
+
+            .media-frame {
+                width: min(100%, 330px);
+                aspect-ratio: 1.18;
+                border-radius: 22px;
+            }
+
+            .media-inner {
+                inset: 8% 8%;
+                border-radius: 18px;
             }
 
             .logo {
@@ -771,6 +796,7 @@
 
             .filter-buttons {
                 padding: 0;
+                gap: 8px;
             }
 
             .filter-btn {
@@ -780,22 +806,86 @@
                 font-size: 13px;
             }
 
+            .products-section {
+                margin: 28px auto 40px;
+                padding: 0 14px;
+            }
+
             .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             .product-image {
-                height: 150px;
-                font-size: 40px;
+                height: 180px;
             }
 
             .product-info {
-                padding: 15px;
+                padding: 16px;
             }
 
             .product-name {
-                font-size: 16px;
+                font-size: 20px;
+                line-height: 1.2;
+            }
+
+            .product-description {
+                font-size: 14px;
+            }
+
+            .product-buttons {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .btn {
+                padding: 12px 12px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .hero {
+                padding-top: 20px;
+                padding-bottom: 28px;
+            }
+
+            .header-content {
+                padding: 0 14px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 9vw, 2.5rem);
+            }
+
+            .hero p {
+                font-size: 0.96rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .trust-badge {
+                width: auto;
+                max-width: 100%;
+            }
+
+            .hero-visual {
+                min-height: 180px;
+            }
+
+            .media-frame {
+                width: min(100%, 285px);
+                aspect-ratio: 1.08;
+            }
+
+            .filter-btn {
+                flex-basis: 100%;
+            }
+
+            .product-buttons {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -939,12 +1029,14 @@
                 nombre: "Ácido Cítrico Natural para Limpieza",
                 categoria: "aseo",
                 descripcion: "Elimina sarro, descalcifica griferías y accesorios y limpia superficies de forma ecológica, efectiva y segura.",
-                imagen: "assets/img/productos/ácido-cítrico.jpg",
+                imagen: "assets/img/productos/percarbonato.jpg",
                 enlaceMercadoLibre: "https://mercadolibre.com.ar/...",
                 slug: "acido-citric-natural-limpieza",
                 badge: { text: "Eco", color: "#2E7D32" }
             }
         ];
+
+        const PRODUCT_FALLBACK_IMAGE = "assets/img/productos/percarbonato.jpg";
 
         // Función para renderizar productos
         function renderizar(filtro = "all") {
@@ -958,9 +1050,10 @@
             productosFiltrados.forEach(producto => {
                 const card = document.createElement("div");
                 card.className = "product-card";
-                const imagenHtml = producto.imagen.startsWith("assets/") || producto.imagen.startsWith("http")
-                    ? `<img src="${producto.imagen}" alt="${producto.nombre}">`
-                    : producto.imagen;
+                const imagenSrc = (producto.imagen && (producto.imagen.startsWith("assets/") || producto.imagen.startsWith("http")))
+                    ? producto.imagen
+                    : PRODUCT_FALLBACK_IMAGE;
+                const imagenHtml = `<img src="${imagenSrc}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='${PRODUCT_FALLBACK_IMAGE}';">`;
                 const badgeHtml = producto.badge
                     ? `<span class="product-badge" style="background:${producto.badge.color};">${producto.badge.text}</span>`
                     : "";
