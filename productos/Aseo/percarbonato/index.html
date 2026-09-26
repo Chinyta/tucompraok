@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,9 +25,15 @@
             --shadow-soft: 0 18px 40px rgba(16, 26, 88, 0.08);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,8 +42,14 @@
             line-height: 1.6;
         }
 
-        a { text-decoration: none; }
-        img { display: block; max-width: 100%; }
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
 
         header {
             background: rgba(17, 26, 79, 0.96);
@@ -46,7 +59,7 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 10px 24px rgba(16, 26, 88, 0.18);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(8px);
         }
 
@@ -88,11 +101,13 @@
             height: 100%;
             object-fit: contain;
             display: block;
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.14));
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.14));
             background: transparent;
         }
 
-        .logo:hover .logo-icon { transform: scale(1.02); }
+        .logo:hover .logo-icon {
+            transform: scale(1.02);
+        }
 
         .container {
             max-width: 1200px;
@@ -170,7 +185,7 @@
 
         .thumb.active {
             border-color: #2f7ef7;
-            box-shadow: 0 0 0 2px rgba(47,126,247,0.12);
+            box-shadow: 0 0 0 2px rgba(47, 126, 247, 0.12);
         }
 
         .thumb img {
@@ -259,7 +274,7 @@
             height: 42px;
             border-radius: 50%;
             border: 1px solid rgba(18, 27, 84, 0.08);
-            background: rgba(255,255,255,0.88);
+            background: rgba(255, 255, 255, 0.88);
             box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
             color: #2f7ef7;
             font-size: 22px;
@@ -288,7 +303,7 @@
             height: 10px;
             border-radius: 50%;
             background: #2f7ef7;
-            box-shadow: 0 0 0 4px rgba(47,126,247,0.12);
+            box-shadow: 0 0 0 4px rgba(47, 126, 247, 0.12);
             margin-left: 6px;
         }
 
@@ -446,7 +461,7 @@
             justify-content: center;
             padding: 8px 12px;
             border-radius: 999px;
-            background: rgba(47,126,247,0.08);
+            background: rgba(47, 126, 247, 0.08);
             color: #2f7ef7;
             font-size: 0.75rem;
             font-weight: 800;
@@ -472,13 +487,13 @@
         .btn-primary {
             color: white;
             background: linear-gradient(135deg, var(--brand-orange) 0%, #ff9e3d 100%);
-            box-shadow: 0 14px 26px rgba(245,124,0,0.22);
+            box-shadow: 0 14px 26px rgba(245, 124, 0, 0.22);
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             color: white;
-            border-color: rgba(255,255,255,0.2);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .trust-row {
@@ -488,8 +503,8 @@
         }
 
         .trust-badge {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             border-radius: 999px;
             padding: 10px 16px;
             color: white;
@@ -628,8 +643,8 @@
 
         .pack-card:hover,
         .pack-card.active {
-            border-color: rgba(26,35,126,0.45);
-            box-shadow: 0 10px 20px rgba(26,35,126,0.08);
+            border-color: rgba(26, 35, 126, 0.45);
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.08);
             transform: translateY(-1px);
         }
 
@@ -718,7 +733,7 @@
         .btn-ghost {
             background: white;
             color: var(--brand-blue);
-            border-color: rgba(26,35,126,0.3);
+            border-color: rgba(26, 35, 126, 0.3);
         }
 
         .section {
@@ -757,7 +772,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(26,35,126,0.12), rgba(245,124,0,0.1));
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.12), rgba(245, 124, 0, 0.1));
             margin-bottom: 12px;
             overflow: hidden;
             padding: 8px;
@@ -839,7 +854,7 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--brand-blue);
-            background: rgba(26,35,126,0.08);
+            background: rgba(26, 35, 126, 0.08);
             border-radius: 999px;
             padding: 7px 10px;
         }
@@ -958,7 +973,7 @@
         }
 
         .footer-copy p {
-            color: rgba(255,255,255,0.72);
+            color: rgba(255, 255, 255, 0.72);
         }
 
         .footer-links {
@@ -969,7 +984,7 @@
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.82);
+            color: rgba(255, 255, 255, 0.82);
             font-weight: 700;
         }
 
@@ -1008,7 +1023,7 @@
                 justify-content: flex-start;
                 padding-bottom: 8px;
                 scrollbar-width: thin;
-                scrollbar-color: rgba(26,35,126,0.38) rgba(26,35,126,0.05);
+                scrollbar-color: rgba(26, 35, 126, 0.38) rgba(26, 35, 126, 0.05);
             }
 
             .thumbs::after {
@@ -1022,7 +1037,7 @@
                 width: 28px;
                 height: 68px;
                 border-radius: 10px;
-                background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(17,26,79,0.15) 100%);
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(17, 26, 79, 0.15) 100%);
                 color: var(--brand-blue);
                 font-size: 1.2rem;
                 font-weight: 900;
@@ -1135,8 +1150,256 @@
                 height: 62px;
             }
         }
+
+        /* --- ESTILOS DE LA SECCIÓN Y GRID --- */
+        #pasta-quitamanchas {
+            padding: 20px 0;
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* --- TARJETA DE CADA PASO --- */
+        .step-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px 16px 20px 16px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(26, 35, 126, 0.08);
+        }
+
+        /* --- NÚMERO/INSIGNIA EN LA ESQUINA --- */
+        .step-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 28px;
+            height: 28px;
+            background-color: #0077b6;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- CONTENEDOR DE LA IMAGEN / ÍCONO --- */
+        .step-icon {
+            width: 90px;
+            height: 90px;
+            margin-top: 10px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        /* --- AJUSTE AUTOMÁTICO DE IMÁGENES --- */
+        .step-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* Mantiene la proporción original sin deformar la imagen */
+        }
+
+        /* --- TEXTOS --- */
+        .step-card h4 {
+            color: #1a237e;
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin: 0 0 8px 0;
+        }
+
+        .step-card p {
+            color: #4a5568;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .step-card p strong {
+            color: #0f172a;
+        }
+
+        /* --- BANNER DE ALERTA --- */
+        .banner-water-alert {
+            background-color: #e0f2fe;
+            color: #0284c7;
+            border: 1px solid #bae6fd;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
+        }
+
+        /* --- GRID DE MÉTODOS MULTIUSO --- */
+        .multiuso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* --- TARJETA MULTIUSO --- */
+        .multiuso-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .multiuso-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(26, 35, 126, 0.08);
+        }
+
+        /* --- CONTENEDOR E IMÁGENES DE LOS ÍCONOS --- */
+        .multiuso-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .multiuso-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            /* Evita la deformación y mantiene la escala original */
+        }
+
+        /* --- TEXTOS MULTIUSO --- */
+        .multiuso-card h4 {
+            color: #1a237e;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .multiuso-card p {
+            color: #4a5568;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .multiuso-card p strong {
+            color: #0f172a;
+        }
+
+        /* --- CONTENEDOR DE TARJETAS DE BENEFICIOS --- */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* --- TARJETA DE BENEFICIO --- */
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Alinea los elementos a la izquierda como en tu diseño */
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(26, 35, 126, 0.08);
+        }
+
+        /* --- CONTENEDOR DEL ÍCONO --- */
+        .feature-card .icon {
+            width: 64px;
+            height: 64px;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            padding: 8px;
+            flex-shrink: 0;
+        }
+
+        /* --- IMAGEN DENTRO DEL ÍCONO --- */
+        .feature-card .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Garantiza que el ícono no se deforme ni se distorsione */
+        }
+
+        /* --- TEXTOS --- */
+        .feature-card h4 {
+            color: #1a237e;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            margin: 0;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-content">
@@ -1162,59 +1425,82 @@
         <div class="container info-grid">
             <section class="panel gallery-panel" aria-label="Galería del producto">
                 <div class="thumbs">
-                    <button class="thumb active" type="button" data-type="image" data-src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png" aria-label="Ver imagen principal">
-                        <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png" alt="Percarbonato de sodio" />
+
+                    <button class="thumb active" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                        aria-label="Ver imagen principal">
+                        <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                            alt="Percarbonato de sodio" />
                     </button>
-                    <button class="thumb" type="button" data-type="image" data-src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png" aria-label="Ver producto tipo kraft">
-                        <img src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png" alt="Percarbonato en presentación kraft" />
+                    <button class="thumb is-video" type="button" data-type="video"
+                        data-src="../../../assets/videos/percarbonato_video.mp4" aria-label="Ver video del producto">
+                        <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                            alt="Video de percarbonato" />
                     </button>
-                    <button class="thumb" type="button" data-type="image" data-src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg" aria-label="Ver pack de 3 unidades">
-                        <img src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg" alt="Pack de 3 percarbonato" />
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png"
+                        aria-label="Ver producto tipo kraft">
+                        <img src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png"
+                            alt="Percarbonato en presentación kraft" />
                     </button>
-                    <button class="thumb" type="button" data-type="image" data-src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg" aria-label="Ver ejemplo de uso">
-                        <img src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg" alt="Ejemplo de uso del percarbonato" />
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg"
+                        aria-label="Ver pack de 3 unidades">
+                        <img src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg"
+                            alt="Pack de 3 percarbonato" />
                     </button>
-                    <button class="thumb is-video" type="button" data-type="video" data-src="../../../assets/videos/percarbonato_video.mp4" aria-label="Ver video del producto">
-                        <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png" alt="Video de percarbonato" />
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg"
+                        aria-label="Ver ejemplo de uso">
+                        <img src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg"
+                            alt="Ejemplo de uso del percarbonato" />
                     </button>
+
                 </div>
                 <div class="thumb-hint" aria-hidden="true">Desliza para ver más</div>
 
                 <div class="main-image-shell">
                     <div class="product-shot">
-                        <img id="mainMediaImage" src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png" alt="Percarbonato de sodio" />
-                        <video id="mainMediaVideo" src="../../../assets/videos/percarbonato_video.mp4" controls playsinline style="display:none;"></video>
+                        <img id="mainMediaImage"
+                            src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                            alt="Percarbonato de sodio" />
+                        <video id="mainMediaVideo" src="../../../assets/videos/percarbonato_video.mp4" controls
+                            playsinline style="display:none;"></video>
                     </div>
                 </div>
             </section>
 
-            <section class="panel product-panel" aria-labelledby="producto-title">                
+            <section class="panel product-panel" aria-labelledby="producto-title">
 
-                <h2 id="producto-title" style="font-size: 2rem; color: var(--brand-blue); margin-bottom: 8px;">Percarbonato de Sodio</h2>
+                <h2 id="producto-title" style="font-size: 2rem; color: var(--brand-blue); margin-bottom: 8px;">
+                    Percarbonato de Sodio</h2>
                 <p style="color: var(--muted-text); margin-bottom: 8px; font-size: 1.02rem;">
-                    Potente, versátil y pensado para una limpieza efectiva sin recurrir a productos agresivos.
+                    ¿Manchas que el detergente normal ya no saca? Esto sí las saca..
                 </p>
 
                 <ul class="feature-list">
-                    <li>Elimina manchas y suciedad en ropa, cocina y baño.</li>
-                    <li>Ayuda a desincrustar superficies y griferías con menos esfuerzo.</li>
-                    <li>Recupera el blanco original sin dañar fibras ni colores resistentes.</li>
-                    <li>Ideal para una limpieza más responsable, eficaz y económica.</li>
+                    <li>Ropa blanca amarillenta → blanca de nuevo en una sola noche de remojo</li>
+                    <li>Manchas de sudor, vino o grasa → fuera con 10-20 min de pasta activa</li>
+                    <li>Juntas de cerámica ennegrecidas → blancas en 2-3 min de cepillado</li>
+                    <li>Sin cloro: no destiñe, no maltrata la tela, no deja olor a químico</li>
                 </ul>
 
                 <div class="shipping-note">
-                    Envío rápido • Compra segura • Entrega a todo Chile desde Mercado Libre
+                    🚚 Envío a todo Chile · 🔒 Compra protegida por Mercado Libre · ⭐ Garantía de vendedor
                 </div>
             </section>
 
             <aside class="panel buy-box" id="comprar">
                 <h3>Elige tu oferta</h3>
-                <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en Mercado Libre.</p>
+                <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en Mercado
+                    Libre.</p>
                 <div class="pack-grid">
-                    <a class="pack-card active" href="https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=Wms0vq6j-C_ZU-sSCBdhTrIafDbToibHujUOgHAOKwJbpD7p#origin=share&sid=share&action=copy" target="_blank" rel="noopener">
+                    <a class="pack-card active"
+                        href="https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=Wms0vq6j-C_ZU-sSCBdhTrIafDbToibHujUOgHAOKwJbpD7p#origin=share&sid=share&action=copy"
+                        target="_blank" rel="noopener">
                         <div class="pack-left">
                             <div class="price">$5.900</div>
-                            <span class="pack-name">Oferta 1 • 1 kg</span>                            
+                            <span class="pack-name">Oferta 1 • 1 kg</span>
                             <span class="pack-meta">Individual para uso diario</span>
                         </div>
                         <div class="pack-right">
@@ -1223,7 +1509,9 @@
                         </div>
                     </a>
 
-                    <a class="pack-card" href="https://www.mercadolibre.cl/up/MLCU4698513920?matt_tool=94515950&pdp_filters=item_id:MLC4330570176&ua=il2m3wf1c3MrY76dZXNVaPgMIguSHMqVupGeiYnjjSpsDl_V#origin=share&sid=share&wid=MLC4330570176&action=copy" target="_blank" rel="noopener">
+                    <a class="pack-card"
+                        href="https://www.mercadolibre.cl/up/MLCU4698513920?matt_tool=94515950&pdp_filters=item_id:MLC4330570176&ua=il2m3wf1c3MrY76dZXNVaPgMIguSHMqVupGeiYnjjSpsDl_V#origin=share&sid=share&wid=MLC4330570176&action=copy"
+                        target="_blank" rel="noopener">
                         <div class="pack-left">
                             <div class="price">$16.900</div>
                             <span class="pack-name">Oferta 2 • Pack 3 kilos</span>
@@ -1239,12 +1527,15 @@
             </aside>
         </div>
 
+        <!-- SECCIÓN: BENEFICIOS / ¿POR QUÉ ELEGIR OXÍGENO ACTIVO? -->
         <section class="section" id="beneficios">
             <h3 class="section-title">¿Por qué elegir oxígeno activo?</h3>
             <div class="feature-cards">
+
                 <article class="feature-card">
                     <div class="icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png" alt="Quita manchas difíciles" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
+                            alt="Quita manchas difíciles" />
                     </div>
                     <h4>Quita manchas difíciles</h4>
                     <p>Elimina manchas de vino, café, sangre, grasa, sudor y suciedad acumulada en telas.</p>
@@ -1252,7 +1543,8 @@
 
                 <article class="feature-card">
                     <div class="icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono detergente.png" alt="Más seguro y ecológico" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono detergente.png"
+                            alt="Más seguro y ecológico" />
                     </div>
                     <h4>Más seguro y ecológico</h4>
                     <p>Blanquea sin cloro, cuida tus prendas y ayuda a mantener un enfoque más responsable.</p>
@@ -1260,7 +1552,8 @@
 
                 <article class="feature-card">
                     <div class="icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png" alt="Ideal para todo tipo de ropa" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
+                            alt="Ideal para todo tipo de ropa" />
                     </div>
                     <h4>Ideal para todo tipo de ropa</h4>
                     <p>Funciona muy bien en ropa blanca y en prendas de color resistente.</p>
@@ -1268,11 +1561,13 @@
 
                 <article class="feature-card">
                     <div class="icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png" alt="Económico y práctico" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
+                            alt="Económico y práctico" />
                     </div>
                     <h4>Económico y práctico</h4>
                     <p>Un formato de 1 kg que rinde mucho y facilita la rutina de limpieza diaria.</p>
                 </article>
+
             </div>
         </section>
 
@@ -1281,8 +1576,9 @@
             <div class="three-pod-grid">
                 <article class="pod-card">
                     <span class="pod-label">¿Qué es?</span>
-                    <h4>La limpieza que hace sentir la diferencia</h4>
-                    <p>Un blanqueador potente, quitamanchas, práctico ysirve para recuperar superficies, tejidos , juntas de cerámica, blanquear utensilios de cocina sin esfuerzo extra.</p>
+                    <h4><b>No es cloro.</b> Es oxígeno activo que hace el trabajo pesado por ti.</h4>
+                    <p>Al contacto con agua tibia (40-60°C) libera oxígeno activo que rompe manchas, sarro y bacterias a
+                        nivel molecular — sin corroer, sin decolorar, sin ese olor a químico agresivo.</p>
                 </article>
 
                 <article class="pod-card">
@@ -1299,7 +1595,8 @@
                     <ul>
                         <li>Formato de 1 kg, rendidor y fácil de usar.</li>
                         <li>Ideal para lavadora, remojo y limpieza general.</li>
-                        <li>Oxigeno que se activa para facilitar la eliminación de manchas.</li>
+                        <li>1 kg = hasta 50 usos · se activa mejor a 40-60°C (en frío rinde menos) </li>
+                        <li>100% libre de cloro, apto para ropa de color ·</li>
                     </ul>
                 </article>
             </div>
@@ -1308,26 +1605,48 @@
         <section class="section">
             <h3 class="section-title">Información complementaria</h3>
             <div class="manual-info-grid">
+
                 <article class="manual-info-card">
-                    <span class="mini-label">Dosis</span>
-                    <h4>Base recomendada</h4>
-                    <p>Usa 1 a 2 cucharadas soperas por cada 3 litros de agua, según la intensidad de la suciedad.</p>
+                    <div class="card-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png" alt="Dosis" width="100"
+                            height="124" />
+                    </div>
+                    <div class="card-content">
+                        <span class="mini-label">Dosis</span>
+                        <h4>Base recomendada</h4>
+                        <p>Usa 1 a 2 cucharadas soperas por cada 3 litros de agua, según la intensidad de la suciedad.
+                        </p>
+                    </div>
                 </article>
 
                 <article class="manual-info-card">
-                    <span class="mini-label">Temperatura</span>
-                    <h4>Se activa con calor</h4>
-                    <p>La acción es más efectiva entre 40°C y 60°C, ideal para reforzar la limpieza en lavado y remojo.</p>
+                    <div class="card-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png" alt="Temperatura"
+                            width="100" height="124" />
+                    </div>
+                    <div class="card-content">
+                        <span class="mini-label">Temperatura</span>
+                        <h4>Se activa con calor</h4>
+                        <p>La acción es más efectiva entre 40°C y 60°C, ideal para reforzar la limpieza en lavado y
+                            remojo.</p>
+                    </div>
                 </article>
 
                 <article class="manual-info-card">
-                    <span class="mini-label">Precaución</span>
-                    <h4>Importante</h4>
-                    <p>No lo mezcles con cloro ni con productos ácidos; úsalo con detergente o en solución por separado para un uso seguro.</p>
+                    <div class="card-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_no_usar.png" alt="Precaución"
+                            width="439" height="124" />
+                    </div>
+                    <div class="card-content">
+                        <span class="mini-label">Precaución</span>
+                        <h4>Importante</h4>
+                        <p>No lo mezcles con cloro ni con productos ácidos; úsalo con detergente o en solución por
+                            separado para un uso seguro.</p>
+                    </div>
                 </article>
+
             </div>
         </section>
-
         <section class="section">
             <h3 class="section-title">Modo de uso</h3>
             <div class="steps">
@@ -1339,7 +1658,8 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h4>Remojo para manchas difíciles</h4>
-                    <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para color y hasta 2 horas para blanco.</p>
+                    <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para color y
+                        hasta 2 horas para blanco.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
@@ -1349,23 +1669,122 @@
             </div>
         </section>
 
+
+
+        <!-- SECCIÓN 1: PASTA QUITAMANCHAS -->
+        <section class="section" id="pasta-quitamanchas">
+            <h3 class="section-title">Pasta Quitamanchas</h3>
+            <div class="steps-grid">
+
+                <article class="step-card">
+                    <span class="step-badge">1</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_pasta_quitamanchas.png"
+                            alt="Preparar pasta quitamanchas" />
+                    </div>
+                    <h4>PREPARAR</h4>
+                    <p><strong>1 cucharada</strong> de percarbonato con unas gotas de agua tibia y forma una pasta
+                        espesa.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">2</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
+                            alt="Aplicar sobre la mancha" />
+                    </div>
+                    <h4>APLICAR</h4>
+                    <p>Cubre la mancha directamente y frota suavemente con los dedos o cepillo suave.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">3</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png"
+                            alt="Esperar de 10 a 20 minutos" />
+                    </div>
+                    <h4>ESPERAR</h4>
+                    <p>Deja actuar <strong>10 a 20 minutos</strong> (40 - 60 °C).</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">4</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
+                            alt="Lavar en lavadora" />
+                    </div>
+                    <h4>LAVAR</h4>
+                    <p>Lavado normal en la lavadora.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: MÉTODOS MULTIUSO EN EL HOGAR -->
+        <section class="section" id="metodos-multiuso">
+            <h3 class="section-title">Métodos Multiuso en el Hogar</h3>
+
+            <div class="banner-water-alert">
+                💧 SIEMPRE CON AGUA TIBIA O CALIENTE
+            </div>
+
+            <div class="multiuso-grid">
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_limpia_juntas.png"
+                            alt="Limpieza de juntas" />
+                    </div>
+                    <h4>Juntas</h4>
+                    <p>Pasta de percarbonato sobre las juntas, <strong>2 a 3 minutos</strong> y frota con cepillo.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <!-- Agrega aquí la ruta de la imagen o icono de mascotas -->
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mascotas.png" alt="Mascotas" />
+                    </div>
+                    <h4>Mascotas</h4>
+                    <p>Remoja comederos, bebederos y mantas.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <!-- Agrega aquí la ruta de la imagen o icono de rutina -->
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
+                            alt="Rutina semanal" />
+                    </div>
+                    <h4>Rutina Semanal</h4>
+                    <p>Agrega una dosis de percarbonato en todos tus lavados.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_utensilios.png"
+                            alt="Vajilla y utensilios" />
+                    </div>
+                    <h4>Vajilla</h4>
+                    <p>Disuelve <strong>1 a 2 cucharadas</strong>, deja 3 minutos para manchas difíciles.</p>
+                </article>
+            </div>
+        </section>
+
         <section class="section">
             <h3 class="section-title">Especificaciones técnicas</h3>
-            <div class="reviews" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+            <div class="reviews">
                 <article class="review">
                     <div class="stars">◉</div>
-                    <p><strong>Marca:</strong> UniClean</p>
+                    <p><strong>Producto:</strong> Percarbonato - Oxígeno Activo</p>
                     <small>Calidad y confianza para tu rutina diaria.</small>
                 </article>
                 <article class="review">
                     <div class="stars">◉</div>
                     <p><strong>Contenido neto:</strong> 1 kilogramo</p>
-                    <small>Formato práctico y bastante rendidor.</small>
+                    <small>Cada envase es de 1 kilogramo de formato, práctico y bastante rendidor.</small>
                 </article>
                 <article class="review">
                     <div class="stars">◉</div>
-                    <p><strong>Origen:</strong> Chile</p>
-                    <small>Fabricado para una limpieza responsable y efectiva.</small>
+                    <p><strong>Distribuido por:</strong> TucompraOk</p>
+                    <small>Distribuido para una limpieza responsable y efectiva.</small>
                 </article>
             </div>
         </section>
@@ -1403,7 +1822,7 @@
                     mediaVideo.style.display = 'block';
                     mediaVideo.src = src;
                     mediaVideo.load();
-                    mediaVideo.play().catch(() => {});
+                    mediaVideo.play().catch(() => { });
                 } else {
                     mediaVideo.style.display = 'none';
                     mediaImage.style.display = 'block';
@@ -1416,4 +1835,5 @@
     </script>
 
 </body>
+
 </html>
