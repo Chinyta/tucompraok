@@ -456,7 +456,7 @@
         }
 
         /*anterior*/
-/*
+        /*
         .buy-box {
             padding: 28px;
             background: linear-gradient(180deg, #ffffff 0%, #fffaf4 100%);
@@ -467,7 +467,8 @@
             margin-bottom: 8px;
             color: var(--brand-blue);
         }
-/*
+
+        /*
         .buy-box-subtitle {
             font-size: 0.92rem;
             color: var(--muted-text);
@@ -945,6 +946,208 @@
                 font-size: 0.85rem;
             }
         }
+
+        /* --- COMPRA DESTACADA / MERCADO LIBRE --- */
+        .buy-box {
+            padding: 24px;
+            background: #FFFFFF;
+            border: 2px solid #FFE600;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .buy-box-header h3 {
+            font-size: 1.45rem;
+            color: #2D3277;
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .buy-box-subtitle {
+            font-size: 0.88rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pack-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .pack-card {
+            position: relative;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Opción Destacada (Pack 3 Kg) */
+        .pack-card.featured {
+            background: #FFFDF0;
+            border: 2px solid #FFE600;
+            box-shadow: 0 6px 18px rgba(255, 230, 0, 0.25);
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -12px;
+            left: 16px;
+            background: #2D3277;
+            color: #FFF;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Miniaturas de Productos */
+        .pack-image-container {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #FFF;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pack-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pack-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .pack-badge-light {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6B7280;
+            text-transform: uppercase;
+        }
+
+        .pack-badge-featured {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #D97706;
+            text-transform: uppercase;
+        }
+
+        .pack-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1F2937;
+        }
+
+        .pack-info .price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #2D3277;
+            margin: 2px 0;
+        }
+
+        .price-discount {
+            font-size: 0.75rem;
+            color: #15803D;
+            font-weight: 700;
+            background: #DCFCE7;
+            padding: 2px 6px;
+            border-radius: 6px;
+            vertical-align: middle;
+        }
+
+        .pack-meta {
+            font-size: 0.8rem;
+            color: #6B7280;
+        }
+
+        /* BOTÓN MERCADO LIBRE */
+        .pack-action {
+            flex-shrink: 0;
+        }
+
+        .btn-meli {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFE600;
+            color: #2D3277;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .btn-meli span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            line-height: 1;
+            opacity: 0.9;
+        }
+
+        .btn-meli strong {
+            font-size: 0.9rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .btn-meli:hover {
+            background-color: #F5DC00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-meli-highlight {
+            background-color: #FFE600;
+            border: 1px solid #E6CF00;
+        }
+
+        .buy-trust-footer {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4B5563;
+            font-weight: 600;
+            border-top: 1px solid #F3F4F6;
+            padding-top: 12px;
+        }
+
+        /* Adaptación Mobile */
+        @media (max-width: 480px) {
+            .pack-card {
+                flex-wrap: wrap;
+            }
+
+            .pack-action {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+            .btn-meli {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -1037,20 +1240,25 @@
 
             <aside class="panel buy-box" id="comprar">
                 <div class="buy-box-header">
-                    <h3>⚡ ¡Elige tu pack y ahorra hoy!</h3>
-                    <p class="buy-box-subtitle">Garantía de satisfación · Envío rápido a todo Chile</p>
+                    <h3>⚡ ¡Elige tu oferta y ahorra hoy!</h3>
+                    <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en
+                        Mercado Libre.</p>
                 </div>
 
                 <div class="pack-grid">
-                    <!-- OFERTA 1 -->
+                    <!-- OFERTA 1: 1 KG -->
                     <div class="pack-card">
-                        <div class="pack-left">
-                            <span class="pack-badge-light">Formato Individual</span>
-                            <span class="pack-name">1 Kilogramo</span>
-                            <div class="price">$5.900</div>
-                            <span class="pack-meta">Ideal para probar o uso diario</span>
+                        <div class="pack-image-container">
+                            <img src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png"
+                            alt="Percarbonato en presentación kraft" class="pack-thumb" />
                         </div>
-                        <div class="pack-right">
+                        <div class="pack-info">
+                            <span class="pack-badge-light">Formato Individual</span>
+                            <span class="pack-name">Oferta 1 • 1 kg</span>
+                            <div class="price">$5.900</div>
+                            <span class="pack-meta">Individual para uso diario</span>
+                        </div>
+                        <div class="pack-action">
                             <a href="https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=Wms0vq6j-C_ZU-sSCBdhTrIafDbToibHujUOgHAOKwJbpD7p#origin=share&sid=share&action=copy"
                                 target="_blank" rel="noopener" class="btn-meli">
                                 <span>Comprar en</span>
@@ -1059,15 +1267,20 @@
                         </div>
                     </div>
 
-                    <!-- OFERTA 2 (DESTACADA) -->
+                    <!-- OFERTA 2: PACK 3 KG (DESTACADO / MÁS VENDIDO) -->
                     <div class="pack-card featured">
-                        <div class="featured-ribbon">🔥 MÁS VENDIDO - MEJOR VALOR</div>
-                        <div class="pack-left">
-                            <span class="pack-name">Pack Ahorro • 3 Kilos</span>
-                            <div class="price">$16.900 <span class="price-discount">¡Ahorras dinero!</span></div>
-                            <span class="pack-meta">Recomendado para reabastecer el hogar</span>
+                        <div class="featured-ribbon">🔥 MÁS VENDIDO</div>
+                        <div class="pack-image-container">
+                           <img src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg"
+                            alt="Pack de 3 percarbonato" class="pack-thumb" />
                         </div>
-                        <div class="pack-right">
+                        <div class="pack-info">
+                            <span class="pack-badge-featured">Pack Ahorro</span>
+                            <span class="pack-name">Oferta 2 • Pack 3 kilos</span>
+                            <div class="price">$16.900 <span class="price-discount">¡Ahorras más!</span></div>
+                            <span class="pack-meta">Ideal para ahorrar y reabastecer</span>
+                        </div>
+                        <div class="pack-action">
                             <a href="https://www.mercadolibre.cl/up/MLCU4698513920?matt_tool=94515950&pdp_filters=item_id:MLC4330570176&ua=il2m3wf1c3MrY76dZXNVaPgMIguSHMqVupGeiYnjjSpsDl_V#origin=share&sid=share&wid=MLC4330570176&action=copy"
                                 target="_blank" rel="noopener" class="btn-meli btn-meli-highlight">
                                 <span>Comprar Pack en</span>
