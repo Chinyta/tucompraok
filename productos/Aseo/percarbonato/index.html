@@ -9,7 +9,8 @@
     <!-- Fuente sans-serif moderna de TuCompraOK -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -44,7 +45,8 @@
             font-family: var(--font-main);
         }
 
-        html, body {
+        html,
+        body {
             max-width: 100%;
             overflow-x: hidden;
         }
@@ -55,7 +57,8 @@
             line-height: 1.5;
         }
 
-        img, video {
+        img,
+        video {
             max-width: 100%;
             display: block;
         }
@@ -147,10 +150,7 @@
             align-items: start;
         }
 
-        /* ============================================= */
-        /* GALERÍA DE PRODUCTO (definición única, sin      */
-        /* duplicados que se pisen entre sí)               */
-        /* ============================================= */
+        /* GALERÍA DE PRODUCTO */
         .gallery-panel {
             background: var(--bg-card);
             border-radius: var(--radius-lg);
@@ -227,7 +227,7 @@
 
         .main-image-shell {
             flex: 1;
-            min-width: 0; /* evita que el flex item empuje el ancho del padre */
+            min-width: 0;
             background: #FAFAFA;
             border-radius: 12px;
             overflow: hidden;
@@ -246,8 +246,6 @@
             justify-content: center;
         }
 
-        /* object-fit: contain para que la foto nunca se recorte ni se */
-        /* estire; el alto se adapta en vez de forzar 100% del panel   */
         .product-shot img,
         .product-shot video {
             width: 100%;
@@ -340,7 +338,7 @@
 
         .pack-info {
             flex: 1 1 160px;
-            min-width: 0; /* clave: permite que el texto se achique en vez de desbordar */
+            min-width: 0;
             display: flex;
             flex-direction: column;
             gap: 2px;
@@ -454,7 +452,8 @@
             border: 1px solid var(--border-light);
         }
 
-        .section-title, .block-title {
+        .section-title,
+        .block-title {
             text-align: center;
             font-size: 24px;
             font-weight: 800;
@@ -785,133 +784,6 @@
             line-height: 1.4;
         }
 
-        /* COMPARATIVA */
-        .comparison-container {
-            background-color: #FFFDF0;
-            padding: 50px 30px;
-            border-radius: 16px;
-            margin: 30px 0;
-            border: 1px solid var(--border-light);
-        }
-
-        .comparison-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .comp-heading {
-            font-size: 30px;
-            font-weight: 800;
-            color: #1F1F1F;
-            line-height: 1.25;
-            margin-bottom: 20px;
-        }
-
-        .comp-description {
-            font-size: 15px;
-            color: #555555;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .btn-comp-yellow {
-            display: inline-block;
-            background-color: var(--accent-yellow);
-            color: #1F1F1F;
-            font-weight: 800;
-            font-size: 13px;
-            padding: 14px 28px;
-            border-radius: 30px;
-            border: 2px solid #222222;
-            text-decoration: none;
-            transition: transform 0.1s ease;
-        }
-
-        .btn-comp-yellow:hover {
-            transform: translateY(-1px);
-            background-color: var(--yellow-hover);
-        }
-
-        /* Envoltorio con scroll horizontal para que la tabla nunca se */
-        /* aplaste ilegible en pantallas angostas                      */
-        .comparison-table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .comp-card-table {
-            width: 100%;
-            min-width: 420px;
-            border-collapse: separate;
-            border-spacing: 0;
-            background: #FFFFFF;
-            border: 1px solid #E0B280;
-            border-radius: 16px;
-        }
-
-        .comp-card-table th,
-        .comp-card-table td {
-            padding: 16px 12px;
-            text-align: center;
-            font-size: 14px;
-            border-bottom: 1px solid #F0F0F0;
-            white-space: nowrap;
-        }
-
-        .comp-card-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .col-feature { width: 48%; }
-        .col-our-product { width: 28%; }
-        .col-others { width: 24%; color: #666; font-weight: 600; }
-
-        .feature-text {
-            text-align: left !important;
-            padding-left: 20px !important;
-            font-weight: 600;
-            color: #222222;
-            white-space: normal !important;
-        }
-
-        .floating-header {
-            background-color: var(--accent-yellow);
-            color: #1F1F1F;
-            font-weight: 800;
-            font-size: 14px;
-            padding: 14px 10px;
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-
-        .highlight-cell {
-            background-color: #FFF2A3;
-            font-weight: bold;
-        }
-
-        .icon-check {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 22px;
-            height: 22px;
-            border: 1.5px solid #222222;
-            border-radius: 50%;
-            font-size: 11px;
-            color: #222222;
-            font-weight: 900;
-        }
-
-        .icon-cross {
-            color: #E53935;
-            font-size: 16px;
-        }
-
         /* PRUEBA SOCIAL / STATS */
         .stats-card {
             background-color: var(--header-navy);
@@ -1013,13 +885,147 @@
             line-height: 1.6;
         }
 
-        /* ============================================= */
-        /* RESPONSIVIDAD — bloque único y consolidado      */
-        /* (antes había 3 media queries repetidas que se   */
-        /* pisaban entre sí)                               */
-        /* ============================================= */
+        /* SECCIÓN COMPARATIVA (UNIFICADA) */
+        .comparison-container {
+            background-color: #FFFDF0;
+            padding: 50px 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .comparison-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .comp-heading {
+            font-size: 30px;
+            font-weight: 800;
+            color: #1F1F1F;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .comp-description {
+            font-size: 15px;
+            color: #555555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-comp-yellow {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: #1F1F1F;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            border: 2px solid #222222;
+            text-decoration: none;
+            transition: transform 0.1s ease;
+            text-align: center;
+        }
+
+        .btn-comp-yellow:hover {
+            transform: translateY(-1px);
+            background-color: var(--yellow-hover);
+        }
+
+        .comparison-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .comp-card-table {
+            width: 100%;
+            min-width: 420px;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #FFFFFF;
+            border: 1px solid #E0B280;
+            border-radius: 16px;
+        }
+
+        .comp-card-table th,
+        .comp-card-table td {
+            padding: 14px 10px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .comp-card-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .col-feature {
+            width: 48%;
+        }
+
+        .col-our-product {
+            width: 28%;
+        }
+
+        .col-others {
+            width: 24%;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .feature-text {
+            text-align: left !important;
+            padding-left: 16px !important;
+            font-weight: 600;
+            color: #222222;
+            white-space: normal !important;
+            word-break: break-word;
+        }
+
+        .floating-header {
+            background-color: var(--accent-yellow);
+            color: #1F1F1F;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 12px 6px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .highlight-cell {
+            background-color: #FFF2A3;
+            font-weight: bold;
+        }
+
+        .icon-check {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid #222222;
+            border-radius: 50%;
+            font-size: 11px;
+            color: #222222;
+            font-weight: 900;
+        }
+
+        .icon-cross {
+            color: #E53935;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVIDAD GENERAL */
         @media (max-width: 900px) {
-            .steps-grid, .multiuso-grid {
+            .steps-grid,
+            .multiuso-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -1031,73 +1037,58 @@
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 10px 12px 30px 12px;
+            .comparison-container {
+                padding: 24px 16px;
             }
 
-            .benefits-grid,
-            .stats-card,
             .comparison-content {
                 grid-template-columns: 1fr;
-            }
-
-            .usage-steps-grid {
-                grid-template-columns: 1fr;
-            }
-
-            /* Galería: miniaturas abajo, en fila horizontal con scroll */
-            .gallery-panel {
-                flex-direction: column-reverse;
-                padding: 12px;
-            }
-
-            .thumbs {
-                flex-direction: row;
-                overflow-x: auto;
-                max-height: none;
-                width: 100%;
-                padding-bottom: 8px;
-            }
-
-            .thumb {
-                width: 56px;
-                height: 56px;
-            }
-
-            .thumb-hint {
-                display: block;
-            }
-
-            .main-image-shell {
-                min-height: 260px;
-            }
-
-            .product-shot img,
-            .product-shot video {
-                max-height: 340px;
-            }
-
-            /* Comparativa: menos padding y texto más chico */
-            .comparison-container {
-                padding: 30px 18px;
+                gap: 24px;
             }
 
             .comp-heading {
                 font-size: 22px;
+                text-align: center;
             }
 
-            .section {
-                padding: 26px 18px;
+            .comp-description {
+                font-size: 14px;
+                text-align: center;
             }
 
-            .faq-item {
-                padding: 18px 18px;
+            .comparison-text-side {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-comp-yellow {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .comp-card-table th,
+            .comp-card-table td {
+                font-size: 12px;
+                padding: 10px 6px;
+            }
+
+            .feature-text {
+                padding-left: 10px !important;
+            }
+
+            .floating-header {
+                font-size: 11px;
+                padding: 8px 4px;
+            }
+
+            .stats-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
         @media (max-width: 640px) {
-            /* Tarjetas de oferta: se apilan para que el precio y el
-               botón de Mercado Libre no queden apretados */
             .pack-card {
                 flex-direction: column;
                 align-items: stretch;
@@ -1129,10 +1120,19 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+
+            .usage-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 500px) {
-            .steps-grid, .multiuso-grid {
+            .steps-grid,
+            .multiuso-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1154,9 +1154,7 @@
 
 <body>
 
-    <!-- ============================================= -->
-    <!-- INICIO: HEADER                                -->
-    <!-- ============================================= -->
+    <!-- HEADER -->
     <header>
         <div class="header-content">
             <div class="logo-wrap">
@@ -1168,25 +1166,13 @@
             </div>
         </div>
     </header>
-    <!-- ============================================= -->
-    <!-- FIN: HEADER                                   -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- INICIO: BREADCRUMBS                           -->
-    <!-- ============================================= -->
+    <!-- BREADCRUMBS -->
     <div class="breadcrumbs">
         <a href="#">Inicio</a> / <a href="#">Aseo</a> / Percarbonato de Sodio
     </div>
-    <!-- ============================================= -->
-    <!-- FIN: BREADCRUMBS                              -->
-    <!-- ============================================= -->
 
-
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN GALERÍA Y OFERTAS DE COMPRA   -->
-    <!-- ============================================= -->
+    <!-- SECCIÓN GALERÍA Y OFERTAS DE COMPRA -->
     <main class="container">
         <div class="info-grid">
 
@@ -1240,7 +1226,8 @@
             <aside class="buy-box" id="comprar">
                 <div class="buy-box-header">
                     <h3>⚡ ¡Elige tu oferta y ahorra hoy!</h3>
-                    <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en Mercado Libre.</p>
+                    <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en
+                        Mercado Libre.</p>
                 </div>
 
                 <div class="pack-grid">
@@ -1294,445 +1281,422 @@
             </aside>
 
         </div>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN GALERÍA Y OFERTAS DE COMPRA      -->
-    <!-- ============================================= -->
 
+        <!-- SECCIÓN ACORDEÓN DETALLES -->
+        <section class="section" id="detalle-producto">
 
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN ACORDEÓN DETALLES             -->
-    <!-- ============================================= -->
-    <section class="section" id="detalle-producto">
-
-        <!-- PESTAÑA 1: DESCRIPCIÓN -->
-        <div class="accordion-item active">
-            <div class="accordion-header">
-                <div class="accordion-title-wrap">
-                    <span>📝</span>
-                    <span>Descripción del producto</span>
+            <!-- PESTAÑA 1: DESCRIPCIÓN -->
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <div class="accordion-title-wrap">
+                        <span>📝</span>
+                        <span>Descripción del producto</span>
+                    </div>
+                    <span class="accordion-icon-toggle">−</span>
                 </div>
-                <span class="accordion-icon-toggle">−</span>
+
+                <div class="accordion-body">
+                    <p class="accordion-description-text">
+                        El percarbonato de sodio de <strong>TuCompraOK</strong> es la alternativa ecológica perfecta al
+                        cloro tradicional. Al entrar en contacto con el agua disuelve y libera oxígeno activo,
+                        desinfectando
+                        telas, blanqueando ropa grisácea o amarillenta y neutralizando los malos olores del hogar sin
+                        contaminar ni dañar las fibras.
+                    </p>
+
+                    <div class="key-benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Ropa blanca amarillenta → blanca de nuevo en una sola noche de remojo</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Manchas de sudor, vino o grasa → fuera con 10-20 min de pasta activa</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Juntas de cerámica ennegrecidas → blancas en 2-3 min de cepillado</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Sin cloro: no destiñe, no maltrata la tela, no deja olor a químico</span>
+                        </div>
+                    </div>
+
+                    <div class="guarantee-box">
+                        <div class="guarantee-item">
+                            <span>🚚</span>
+                            <span>Envío a todo Chile</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span>🔒</span>
+                            <span>Compra protegida por Mercado Libre</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span>⭐</span>
+                            <span>Garantía de vendedor</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="accordion-body">
-                <p class="accordion-description-text">
-                    El percarbonato de sodio de <strong>TuCompraOK</strong> es la alternativa ecológica perfecta al
-                    cloro tradicional. Al entrar en contacto con el agua disuelve y libera oxígeno activo, desinfectando
-                    telas, blanqueando ropa grisácea o amarillenta y neutralizando los malos olores del hogar sin
-                    contaminar ni dañar las fibras.
-                </p>
-
-                <div class="key-benefits-list">
-                    <div class="benefit-item">
-                        <span class="benefit-check">✓</span>
-                        <span>Ropa blanca amarillenta → blanca de nuevo en una sola noche de remojo</span>
+            <!-- PESTAÑA 2: MODO DE USO -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title-wrap">
+                        <span>🧼</span>
+                        <span>Modo de uso recomendado</span>
                     </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✓</span>
-                        <span>Manchas de sudor, vino o grasa → fuera con 10-20 min de pasta activa</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✓</span>
-                        <span>Juntas de cerámica ennegrecidas → blancas en 2-3 min de cepillado</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-check">✓</span>
-                        <span>Sin cloro: no destiñe, no maltrata la tela, no deja olor a químico</span>
+                    <span class="accordion-icon-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <h3 class="usage-title">Modo de uso</h3>
+                    <div class="usage-steps-grid">
+                        <div class="usage-step-card">
+                            <span class="usage-step-number">1</span>
+                            <h4>Reforzador de lavado</h4>
+                            <p>Añade 1 a 2 cucharadas junto a tu detergente habitual en la lavadora.</p>
+                        </div>
+                        <div class="usage-step-card">
+                            <span class="usage-step-number">2</span>
+                            <h4>Remojo para manchas difíciles</h4>
+                            <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para
+                                color y hasta 2 horas para blanco.</p>
+                        </div>
+                        <div class="usage-step-card">
+                            <span class="usage-step-number">3</span>
+                            <h4>Resultado visible</h4>
+                            <p>Luego lava normalmente y disfruta de una ropa más limpia, blanca y fresca.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="guarantee-box">
-                    <div class="guarantee-item">
+            <!-- PESTAÑA 3: ENVÍOS -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title-wrap">
                         <span>🚚</span>
-                        <span>Envío a todo Chile</span>
+                        <span>Envíos y cobertura</span>
                     </div>
-                    <div class="guarantee-item">
-                        <span>🔒</span>
-                        <span>Compra protegida por Mercado Libre</span>
+                    <span class="accordion-icon-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <p class="accordion-description-text">
+                        Realizamos envíos a todo Chile a través de Mercado Envíos. Los despachos dentro de la Región
+                        Metropolitana llegan en 24 a 48 horas hábiles.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN 5 BENEFICIOS -->
+        <section class="section">
+            <h3 class="block-title">5 beneficios reales del percarbonato de sodio</h3>
+            <p class="block-subtitle">Desde la lavadora hasta las superficies de cocina, simplifica tu limpieza diaria.
+            </p>
+
+            <div class="benefits-grid">
+                <img src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg"
+                    style="width: 100%; border-radius: 12px;" alt="Lavado eficiente">
+                <div>
+                    <div class="benefit-card">
+                        <h4>1. Blanqueo sin daño</h4>
+                        <p>Devuelve el blanco a las telas sin debilitar las fibras ni decolorar ropa de tono claro.</p>
                     </div>
-                    <div class="guarantee-item">
-                        <span>⭐</span>
-                        <span>Garantía de vendedor</span>
+                    <div class="benefit-card">
+                        <h4>2. Elimina manchas difíciles</h4>
+                        <p>Efectivo contra manchas de vino, café, grasa y sudor gracias al poder del oxígeno activo.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>3. Desinfección natural</h4>
+                        <p>Elimina hongos y bacterias acumuladas sin olores químicos ni cloro agresivo.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>4. 100% Biodegradable</h4>
+                        <p>Se descompone en agua, oxígeno y carbonato de sodio, inocuo para el ecosistema.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- PESTAÑA 2: MODO DE USO -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <div class="accordion-title-wrap">
-                    <span>🧼</span>
-                    <span>Modo de uso recomendado</span>
-                </div>
-                <span class="accordion-icon-toggle">+</span>
-            </div>
-            <div class="accordion-body">
-                <h3 class="usage-title">Modo de uso</h3>
-                <div class="usage-steps-grid">
-                    <div class="usage-step-card">
-                        <span class="usage-step-number">1</span>
-                        <h4>Reforzador de lavado</h4>
-                        <p>Añade 1 a 2 cucharadas junto a tu detergente habitual en la lavadora.</p>
+        <!-- SECCIÓN PASTA QUITAMANCHAS -->
+        <section class="section" id="pasta-quitamanchas">
+            <h3 class="section-title">Pasta Quitamanchas</h3>
+            <div class="steps-grid">
+
+                <article class="step-card">
+                    <span class="step-badge">1</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png"
+                            alt="Preparar pasta quitamanchas" />
                     </div>
-                    <div class="usage-step-card">
-                        <span class="usage-step-number">2</span>
-                        <h4>Remojo para manchas difíciles</h4>
-                        <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para
-                            color y hasta 2 horas para blanco.</p>
+                    <h4>PREPARAR</h4>
+                    <p><strong>1 cucharada</strong> de percarbonato con unas gotas de agua tibia y forma una pasta
+                        espesa.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">2</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
+                            alt="Aplicar sobre la mancha" />
                     </div>
-                    <div class="usage-step-card">
-                        <span class="usage-step-number">3</span>
-                        <h4>Resultado visible</h4>
-                        <p>Luego lava normalmente y disfruta de una ropa más limpia, blanca y fresca.</p>
+                    <h4>APLICAR</h4>
+                    <p>Cubre la mancha directamente y frota suavemente con los dedos o cepillo suave.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">3</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png"
+                            alt="Esperar de 10 a 20 minutos" />
                     </div>
+                    <h4>ESPERAR</h4>
+                    <p>Deja actuar <strong>10 a 20 minutos</strong> (40 - 60 °C).</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">4</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
+                            alt="Lavar en lavadora" />
+                    </div>
+                    <h4>LAVAR</h4>
+                    <p>Lavado normal en la lavadora.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN MÉTODOS MULTIUSO -->
+        <section class="section" id="metodos-multiuso">
+            <h3 class="section-title">Métodos Multiuso en el Hogar</h3>
+
+            <div class="banner-water-alert">
+                💧 SIEMPRE CON AGUA TIBIA O CALIENTE
+            </div>
+
+            <div class="multiuso-grid">
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_limpia_juntas.png"
+                            alt="Limpieza de juntas" />
+                    </div>
+                    <h4>Juntas</h4>
+                    <p>Pasta de percarbonato sobre las juntas, <strong>2 a 3 minutos</strong> y frota con cepillo.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mascotas.png" alt="Mascotas" />
+                    </div>
+                    <h4>Mascotas</h4>
+                    <p>Remoja comederos, bebederos y mantas.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
+                            alt="Rutina semanal" />
+                    </div>
+                    <h4>Rutina Semanal</h4>
+                    <p>Agrega una dosis de percarbonato en todos tus lavados.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_utensilios.png"
+                            alt="Vajilla y utensilios" />
+                    </div>
+                    <h4>Vajilla</h4>
+                    <p>Disuelve <strong>1 a 2 cucharadas</strong>, deja 3 minutos para manchas difíciles.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN COMPARATIVA -->
+        <section class="comparison-container">
+            <div class="comparison-content">
+                <div class="comparison-text-side">
+                    <h2 class="comp-heading">Por qué elegir percarbonato de sodio</h2>
+                    <p class="comp-description">
+                        Los blanqueadores con cloro decoloran telas, irritan la piel y vierten compuestos tóxicos al
+                        agua. El percarbonato de sodio actúa con la misma efectividad pero de forma completamente
+                        natural. La diferencia se nota en tu ropa, en tu piel y en el ambiente.
+                    </p>
+                    <a href="#comprar" class="btn-comp-yellow">COMPRAR AHORA</a>
+                </div>
+
+                <div class="comparison-table-wrapper">
+                    <table class="comp-card-table">
+                        <thead>
+                            <tr>
+                                <th class="col-feature"></th>
+                                <th class="col-our-product">
+                                    <div class="floating-header">Nuestro producto</div>
+                                </th>
+                                <th class="col-others">Otros</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-text">Sin cloro ni tóxicos</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Biodegradable al 100 %</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Seguro para ropa de color</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">No irrita la piel</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Potencia el detergente</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Desinfecta sin residuos</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- PESTAÑA 3: ENVÍOS -->
-        <div class="accordion-item">
-            <div class="accordion-header">
-                <div class="accordion-title-wrap">
-                    <span>🚚</span>
-                    <span>Envíos y cobertura</span>
-                </div>
-                <span class="accordion-icon-toggle">+</span>
-            </div>
-            <div class="accordion-body">
-                <p class="accordion-description-text">
-                    Realizamos envíos a todo Chile a través de Mercado Envíos. Los despachos dentro de la Región
-                    Metropolitana llegan en 24 a 48 horas hábiles.
-                </p>
-            </div>
-        </div>
-
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN ACORDEÓN DETALLES                -->
-    <!-- ============================================= -->
-
-
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN 5 BENEFICIOS                  -->
-    <!-- ============================================= -->
-    <section class="section">
-        <h3 class="block-title">5 beneficios reales del percarbonato de sodio</h3>
-        <p class="block-subtitle">Desde la lavadora hasta las superficies de cocina, simplifica tu limpieza diaria.</p>
-
-        <div class="benefits-grid">
-            <img src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg"
-                style="width: 100%; border-radius: 12px;" alt="Lavado eficiente">
+        <!-- SECCIÓN PRUEBA SOCIAL / STATS -->
+        <section class="stats-card">
             <div>
-                <div class="benefit-card">
-                    <h4>1. Blanqueo sin daño</h4>
-                    <p>Devuelve el blanco a las telas sin debilitar las fibras ni decolorar ropa de tono claro.</p>
+                <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">Resultados comprobados</h3>
+                <p style="font-size: 13px; color: #D0D7DE;">Clientes que usan percarbonato TuCompraOK reportan
+                    satisfacción total desde el primer uso.</p>
+            </div>
+            <div>
+                <div class="stat-row">
+                    <div class="stat-badge">96%</div>
+                    <div style="font-size: 13px;">Notaron prendas <strong>más blancas y limpias</strong> sin usar cloro.
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <h4>2. Elimina manchas difíciles</h4>
-                    <p>Efectivo contra manchas de vino, café, grasa y sudor gracias al poder del oxígeno activo.</p>
+                <div class="stat-row">
+                    <div class="stat-badge">93%</div>
+                    <div style="font-size: 13px;">Eliminaron <strong>malos olores en toallas</strong> y ropa deportiva.
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <h4>3. Desinfección natural</h4>
-                    <p>Elimina hongos y bacterias acumuladas sin olores químicos ni cloro agresivo.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>4. 100% Biodegradable</h4>
-                    <p>Se descompone en agua, oxígeno y carbonato de sodio, inocuo para el ecosistema.</p>
+                <div class="stat-row">
+                    <div class="stat-badge">91%</div>
+                    <div style="font-size: 13px;">Reemplazaron el blanqueador químico definitivamente.</div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN 5 BENEFICIOS                     -->
-    <!-- ============================================= -->
+        </section>
 
+        <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="faq-section" aria-label="Preguntas frecuentes">
+            <h2 class="section-title" style="margin-bottom: 30px;">Preguntas frecuentes</h2>
 
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN PASTA QUITAMANCHAS            -->
-    <!-- ============================================= -->
-    <section class="section" id="pasta-quitamanchas">
-        <h3 class="section-title">Pasta Quitamanchas</h3>
-        <div class="steps-grid">
-
-            <article class="step-card">
-                <span class="step-badge">1</span>
-                <div class="step-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png" alt="Preparar pasta quitamanchas" />
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Es seguro para ropa de color?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            Sí, el percarbonato de sodio es seguro para ropa de color cuando se usa con agua tibia o
+                            fría y
+                            en las dosis recomendadas. El agua muy caliente puede intensificar la acción blanqueadora,
+                            por
+                            lo que conviene hacer una prueba en un área pequeña si tienes dudas. Para prendas delicadas,
+                            reduce la dosis y el tiempo de exposición.
+                        </p>
+                    </div>
                 </div>
-                <h4>PREPARAR</h4>
-                <p><strong>1 cucharada</strong> de percarbonato con unas gotas de agua tibia y forma una pasta espesa.</p>
-            </article>
 
-            <article class="step-card">
-                <span class="step-badge">2</span>
-                <div class="step-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png" alt="Aplicar sobre la mancha" />
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Puedo usarlo en superficies de cocina o baño?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            Sí, es ideal para limpiar y desinfectar mesones, azulejos y juntas de baño. Disuelve la
+                            cantidad
+                            indicada en agua, aplica con una esponja y deja actuar unos minutos antes de enjuagar. Evita
+                            usarlo sobre mármol o superficies porosas sin sellado, ya que el oxígeno activo puede
+                            afectar
+                            algunos acabados.
+                        </p>
+                    </div>
                 </div>
-                <h4>APLICAR</h4>
-                <p>Cubre la mancha directamente y frota suavemente con los dedos o cepillo suave.</p>
-            </article>
 
-            <article class="step-card">
-                <span class="step-badge">3</span>
-                <div class="step-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png" alt="Esperar de 10 a 20 minutos" />
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Cuánto producto se usa por lavado?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            La dosis estándar para potenciar el detergente en lavadora es de 1 cucharada sopera por
+                            carga.
+                            Para remojos o manchas más intensas puedes aumentar a 2 cucharadas disueltas en agua tibia.
+                            Con
+                            1 kg obtienes una cantidad generosa para múltiples lavados y usos de limpieza del hogar.
+                        </p>
+                    </div>
                 </div>
-                <h4>ESPERAR</h4>
-                <p>Deja actuar <strong>10 a 20 minutos</strong> (40 - 60 °C).</p>
-            </article>
 
-            <article class="step-card">
-                <span class="step-badge">4</span>
-                <div class="step-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png" alt="Lavar en lavadora" />
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Cómo debo almacenarlo?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            Guarda el percarbonato de sodio en un recipiente hermético, en un lugar fresco y seco, lejos
+                            de
+                            la humedad. La exposición al aire y a la humedad puede activar prematuramente la liberación
+                            de
+                            oxígeno y reducir su efectividad. Mantenerlo bien cerrado garantiza que conserve su poder
+                            blanqueador por mucho más tiempo.
+                        </p>
+                    </div>
                 </div>
-                <h4>LAVAR</h4>
-                <p>Lavado normal en la lavadora.</p>
-            </article>
 
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN PASTA QUITAMANCHAS               -->
-    <!-- ============================================= -->
-
-
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN MÉTODOS MULTIUSO             -->
-    <!-- ============================================= -->
-    <section class="section" id="metodos-multiuso">
-        <h3 class="section-title">Métodos Multiuso en el Hogar</h3>
-
-        <div class="banner-water-alert">
-            💧 SIEMPRE CON AGUA TIBIA O CALIENTE
-        </div>
-
-        <div class="multiuso-grid">
-            <article class="multiuso-card">
-                <div class="multiuso-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_limpia_juntas.png" alt="Limpieza de juntas" />
-                </div>
-                <h4>Juntas</h4>
-                <p>Pasta de percarbonato sobre las juntas, <strong>2 a 3 minutos</strong> y frota con cepillo.</p>
-            </article>
-
-            <article class="multiuso-card">
-                <div class="multiuso-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_mascotas.png" alt="Mascotas" />
-                </div>
-                <h4>Mascotas</h4>
-                <p>Remoja comederos, bebederos y mantas.</p>
-            </article>
-
-            <article class="multiuso-card">
-                <div class="multiuso-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png" alt="Rutina semanal" />
-                </div>
-                <h4>Rutina Semanal</h4>
-                <p>Agrega una dosis de percarbonato en todos tus lavados.</p>
-            </article>
-
-            <article class="multiuso-card">
-                <div class="multiuso-icon">
-                    <img src="../../../assets/img/iconos/percarbonato/icono_utensilios.png" alt="Vajilla y utensilios" />
-                </div>
-                <h4>Vajilla</h4>
-                <p>Disuelve <strong>1 a 2 cucharadas</strong>, deja 3 minutos para manchas difíciles.</p>
-            </article>
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN MÉTODOS MULTIUSO                -->
-    <!-- ============================================= -->
-
-
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN COMPARATIVA                  -->
-    <!-- ============================================= -->
-    <section class="comparison-container">
-        <div class="comparison-content">
-            <div class="comparison-text-side">
-                <h2 class="comp-heading">Por qué elegir percarbonato de sodio</h2>
-                <p class="comp-description">
-                    Los blanqueadores con cloro decoloran telas, irritan la piel y vierten compuestos tóxicos al
-                    agua. El percarbonato de sodio actúa con la misma efectividad pero de forma completamente
-                    natural. La diferencia se nota en tu ropa, en tu piel y en el ambiente.
-                </p>
-                <a href="#comprar" class="btn-comp-yellow">COMPRAR AHORA</a>
-            </div>
-
-            <div class="comparison-table-wrapper">
-                <table class="comp-card-table">
-                    <thead>
-                        <tr>
-                            <th class="col-feature"></th>
-                            <th class="col-our-product">
-                                <div class="floating-header">Nuestro producto</div>
-                            </th>
-                            <th class="col-others">Otros</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="feature-text">Sin cloro ni tóxicos</td>
-                            <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                            <td><span class="icon-cross">✕</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-text">Biodegradable al 100 %</td>
-                            <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                            <td><span class="icon-cross">✕</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-text">Seguro para ropa de color</td>
-                            <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                            <td><span class="icon-cross">✕</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-text">No irrita la piel</td>
-                            <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                            <td><span class="icon-cross">✕</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-text">Potencia el detergente</td>
-                            <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                            <td><span class="icon-cross">✕</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-text">Desinfecta sin residuos</td>
-                            <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                            <td><span class="icon-cross">✕</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN COMPARATIVA                     -->
-    <!-- ============================================= -->
-
-
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN PRUEBA SOCIAL / STATS         -->
-    <!-- ============================================= -->
-    <section class="stats-card">
-        <div>
-            <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">Resultados comprobados</h3>
-            <p style="font-size: 13px; color: #D0D7DE;">Clientes que usan percarbonato TuCompraOK reportan satisfacción total desde el primer uso.</p>
-        </div>
-        <div>
-            <div class="stat-row">
-                <div class="stat-badge">96%</div>
-                <div style="font-size: 13px;">Notaron prendas <strong>más blancas y limpias</strong> sin usar cloro.</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-badge">93%</div>
-                <div style="font-size: 13px;">Eliminaron <strong>malos olores en toallas</strong> y ropa deportiva.</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-badge">91%</div>
-                <div style="font-size: 13px;">Reemplazaron el blanqueador químico definitivamente.</div>
-            </div>
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN PRUEBA SOCIAL / STATS            -->
-    <!-- ============================================= -->
-
-
-    <!-- ============================================= -->
-    <!-- INICIO: SECCIÓN PREGUNTAS FRECUENTES (FAQ)    -->
-    <!-- ============================================= -->
-    <section class="faq-section" aria-label="Preguntas frecuentes">
-        <h2 class="section-title" style="margin-bottom: 30px;">Preguntas frecuentes</h2>
-
-        <div class="faq-container">
-            <div class="faq-item active">
-                <div class="faq-header">
-                    <h3 class="faq-question">¿Es seguro para ropa de color?</h3>
-                    <span class="faq-icon">▲</span>
-                </div>
-                <div class="faq-body">
-                    <p class="faq-answer">
-                        Sí, el percarbonato de sodio es seguro para ropa de color cuando se usa con agua tibia o fría y
-                        en las dosis recomendadas. El agua muy caliente puede intensificar la acción blanqueadora, por
-                        lo que conviene hacer una prueba en un área pequeña si tienes dudas. Para prendas delicadas,
-                        reduce la dosis y el tiempo de exposición.
-                    </p>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Es realmente biodegradable?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            Sí. Al reaccionar en agua, el percarbonato de sodio se descompone en carbonato de sodio,
+                            agua y
+                            oxígeno, sustancias que no representan riesgo ambiental significativo. Por eso es
+                            considerado
+                            una alternativa ecológica a los blanqueadores con cloro. Esta propiedad lo hace adecuado
+                            para
+                            hogares que buscan reducir su impacto ambiental.
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <div class="faq-item">
-                <div class="faq-header">
-                    <h3 class="faq-question">¿Puedo usarlo en superficies de cocina o baño?</h3>
-                    <span class="faq-icon">▲</span>
-                </div>
-                <div class="faq-body">
-                    <p class="faq-answer">
-                        Sí, es ideal para limpiar y desinfectar mesones, azulejos y juntas de baño. Disuelve la cantidad
-                        indicada en agua, aplica con una esponja y deja actuar unos minutos antes de enjuagar. Evita
-                        usarlo sobre mármol o superficies porosas sin sellado, ya que el oxígeno activo puede afectar
-                        algunos acabados.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-header">
-                    <h3 class="faq-question">¿Cuánto producto se usa por lavado?</h3>
-                    <span class="faq-icon">▲</span>
-                </div>
-                <div class="faq-body">
-                    <p class="faq-answer">
-                        La dosis estándar para potenciar el detergente en lavadora es de 1 cucharada sopera por carga.
-                        Para remojos o manchas más intensas puedes aumentar a 2 cucharadas disueltas en agua tibia. Con
-                        1 kg obtienes una cantidad generosa para múltiples lavados y usos de limpieza del hogar.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-header">
-                    <h3 class="faq-question">¿Cómo debo almacenarlo?</h3>
-                    <span class="faq-icon">▲</span>
-                </div>
-                <div class="faq-body">
-                    <p class="faq-answer">
-                        Guarda el percarbonato de sodio en un recipiente hermético, en un lugar fresco y seco, lejos de
-                        la humedad. La exposición al aire y a la humedad puede activar prematuramente la liberación de
-                        oxígeno y reducir su efectividad. Mantenerlo bien cerrado garantiza que conserve su poder
-                        blanqueador por mucho más tiempo.
-                    </p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-header">
-                    <h3 class="faq-question">¿Es realmente biodegradable?</h3>
-                    <span class="faq-icon">▲</span>
-                </div>
-                <div class="faq-body">
-                    <p class="faq-answer">
-                        Sí. Al reaccionar en agua, el percarbonato de sodio se descompone en carbonato de sodio, agua y
-                        oxígeno, sustancias que no representan riesgo ambiental significativo. Por eso es considerado
-                        una alternativa ecológica a los blanqueadores con cloro. Esta propiedad lo hace adecuado para
-                        hogares que buscan reducir su impacto ambiental.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN: SECCIÓN PREGUNTAS FRECUENTES (FAQ)       -->
-    <!-- ============================================= -->
+        </section>
 
     </main>
 
-    <!-- ============================================= -->
-    <!-- INICIO: SCRIPTS INTERACTIVOS                 -->
-    <!-- ============================================= -->
+    <!-- SCRIPTS INTERACTIVOS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
@@ -1792,9 +1756,7 @@
 
         });
     </script>
-    <!-- ============================================= -->
-    <!-- FIN: SCRIPTS INTERACTIVOS                    -->
-    <!-- ============================================= -->
 
 </body>
+
 </html>
