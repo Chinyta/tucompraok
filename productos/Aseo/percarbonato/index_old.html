@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percarbonato de Sodio | TuCompraOK</title>
+    <style>
+        :root {
+            --brand-blue: #1A237E;
+            --brand-blue-deep: #101a58;
+            --brand-orange: #F57C00;
+            --brand-orange-dark: #E65100;
+            --brand-gold: #D8B36A;
+            --brand-gold-soft: #F5EBDD;
+            --page-bg: #F7F3EE;
+            --card-bg: #FFFFFF;
+            --soft-bg: #F6F1EA;
+            --border: #E9E2D9;
+            --muted-text: #6B7280;
+            --dark-text: #1F2937;
+            --footer-bg: #1F2937;
+            --success: #2E9C68;
+            --success-soft: #EAF9F0;
+            --shadow-soft: 0 18px 40px rgba(16, 26, 88, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #f9f7f4 0%, #f4f1ed 100%);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        header {
+            background: rgba(17, 26, 79, 0.96);
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 24px rgba(16, 26, 88, 0.18);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 84px;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .logo-icon {
+            width: clamp(170px, 23vw, 260px);
+            height: clamp(54px, 7vw, 84px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.25s ease;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.14));
+            background: transparent;
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.02);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            font-size: 14px;
+            color: var(--muted-text);
+        }
+
+        .breadcrumb a {
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+
+        .breadcrumb span {
+            color: var(--muted-text);
+        }
+
+        .gallery-panel {
+            display: grid;
+            grid-template-columns: 86px minmax(0, 1fr);
+            gap: 18px;
+            padding: 16px 0;
+            min-height: 540px;
+        }
+
+        .thumbs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            padding-top: 4px;
+            position: relative;
+        }
+
+        .thumb-hint {
+            display: none;
+        }
+
+        .thumb {
+            width: 78px;
+            height: 78px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #dfe6ee;
+            background: #fff;
+            padding: 0;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        .thumb.active {
+            border-color: #2f7ef7;
+            box-shadow: 0 0 0 2px rgba(47, 126, 247, 0.12);
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .thumb.is-video::after {
+            content: "▶";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            background: rgba(0, 0, 0, 0.18);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .main-image-shell {
+            background: #fff;
+            border: 1px solid #eceff4;
+            border-radius: 18px;
+            min-height: 540px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+        }
+
+        .product-shot {
+            position: relative;
+            width: min(100%, 760px);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #f4efe8 0%, #f0ece7 100%);
+        }
+
+        .product-shot img,
+        .product-shot video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 14px;
+        }
+
+        main {
+            padding: 20px 0 80px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.38fr) minmax(320px, 0.9fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .gallery-panel,
+        .product-panel {
+            grid-column: 1;
+        }
+
+        .panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .product-panel {
+            padding: 28px;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            margin: 22px 0 28px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--success-soft);
+            color: var(--success);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .shipping-note {
+            background: var(--soft-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 16px 18px;
+            color: var(--brand-blue);
+            font-weight: 700;
+        }
+
+        /* --- COMPRA DESTACADA / MERCADO LIBRE --- */
+        .buy-box {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            padding: 24px;
+            background: #FFFFFF;
+            border: 2px solid #FFE600;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .buy-box-header h3 {
+            font-size: 1.45rem;
+            color: #2D3277;
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .buy-box-subtitle {
+            font-size: 0.88rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pack-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .pack-card {
+            position: relative;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pack-card.featured {
+            background: #FFFDF0;
+            border: 2px solid #FFE600;
+            box-shadow: 0 6px 18px rgba(255, 230, 0, 0.25);
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -12px;
+            left: 16px;
+            background: #2D3277;
+            color: #FFF;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .pack-image-container {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #FFF;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pack-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pack-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .pack-badge-light {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6B7280;
+            text-transform: uppercase;
+        }
+
+        .pack-badge-featured {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #D97706;
+            text-transform: uppercase;
+        }
+
+        .pack-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1F2937;
+        }
+
+        .pack-info .price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #2D3277;
+            margin: 2px 0;
+        }
+
+        .price-discount {
+            font-size: 0.75rem;
+            color: #15803D;
+            font-weight: 700;
+            background: #DCFCE7;
+            padding: 2px 6px;
+            border-radius: 6px;
+            vertical-align: middle;
+        }
+
+        .pack-meta {
+            font-size: 0.8rem;
+            color: #6B7280;
+        }
+
+        .pack-action {
+            flex-shrink: 0;
+        }
+
+        .btn-meli {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFE600;
+            color: #2D3277;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .btn-meli span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            line-height: 1;
+            opacity: 0.9;
+        }
+
+        .btn-meli strong {
+            font-size: 0.9rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .btn-meli:hover {
+            background-color: #F5DC00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-meli-highlight {
+            background-color: #FFE600;
+            border: 1px solid #E6CF00;
+        }
+
+        .buy-trust-footer {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4B5563;
+            font-weight: 600;
+            border-top: 1px solid #F3F4F6;
+            padding-top: 12px;
+        }
+
+        .section {
+            margin-top: 32px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            box-shadow: var(--shadow-soft);
+            padding: 30px 28px;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 2vw, 2.3rem);
+            color: var(--brand-blue);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        /* --- SECCIÓN BENEFICIOS --- */
+        #beneficios .feature-cards-horizontal {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .horizontal-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .horizontal-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 35, 126, 0.08);
+        }
+
+        .feature-icon-wrapper {
+            flex-shrink: 0;
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .feature-icon-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .feature-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-body h4 {
+            color: var(--brand-blue);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            line-height: 1.25;
+        }
+
+        .feature-body p {
+            color: #4a5568;
+            font-size: 0.92rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* --- PODS Y REFERENCIA RÁPIDA --- */
+        .three-pod-grid,
+        .manual-info-grid,
+        .steps,
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .pod-card {
+            background: linear-gradient(180deg, #fff 0%, #faf7f3 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 22px 20px;
+        }
+
+        .pod-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brand-blue);
+            background: rgba(26, 35, 126, 0.08);
+            border-radius: 999px;
+            padding: 7px 10px;
+        }
+
+        .pod-card h4 {
+            margin-bottom: 12px;
+            font-size: 1.12rem;
+            color: var(--dark-text);
+        }
+
+        .pod-card p,
+        .pod-card li {
+            color: var(--muted-text);
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        .pod-card ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .pod-card li::before {
+            content: "•";
+            color: var(--brand-orange);
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        .manual-info-card {
+            background: linear-gradient(180deg, #fefcf9 0%, #f6f1ea 100%);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 20px 18px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .manual-info-card .card-icon {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+        }
+
+        .manual-info-card .card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .manual-info-card .mini-label {
+            display: inline-block;
+            color: var(--brand-blue);
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .manual-info-card h4 {
+            font-size: 1.05rem;
+            color: var(--dark-text);
+            margin-bottom: 4px;
+        }
+
+        .manual-info-card p {
+            color: var(--muted-text);
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+
+        .step {
+            background: linear-gradient(180deg, #fdfbf9 0%, #f8f4ef 100%);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--brand-blue);
+            color: white;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .step h4 {
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+
+        .step p {
+            color: var(--muted-text);
+        }
+
+        /* --- PASOS Y MULTIUSO GRID --- */
+        .steps-grid,
+        .multiuso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .step-card,
+        .multiuso-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px 16px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .step-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 28px;
+            height: 28px;
+            background-color: #0077b6;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon,
+        .multiuso-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon img,
+        .multiuso-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .step-card h4,
+        .multiuso-card h4 {
+            color: var(--brand-blue);
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .step-card p,
+        .multiuso-card p {
+            color: #4a5568;
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .banner-water-alert {
+            background-color: #e0f2fe;
+            color: #0284c7;
+            border: 1px solid #bae6fd;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .review {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .stars {
+            color: #f4b740;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            margin-top: 50px;
+            padding: 34px 20px 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 700;
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 900px) {
+            .info-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .gallery-panel,
+            .product-panel,
+            .buy-box {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
+
+            .three-pod-grid,
+            .manual-info-grid,
+            .steps,
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .horizontal-card {
+                padding: 12px 16px;
+                gap: 14px;
+                border-radius: 16px;
+            }
+
+            .feature-icon-wrapper {
+                width: 75px;
+                height: 75px;
+                padding: 8px;
+            }
+
+            .feature-body h4 {
+                font-size: 1.05rem;
+            }
+
+            .feature-body p {
+                font-size: 0.85rem;
+            }
+
+            .pack-card {
+                flex-wrap: wrap;
+            }
+
+            .pack-action {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+            .btn-meli {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-wrap">
+                <a href="../../../index.html" class="logo" aria-label="TuCompraOK">
+                    <span class="logo-icon">
+                        <img src="../../../assets/img/logos/logo_fondo_transp_rectangular.png" alt="TuCompraOK" />
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../../../index.html">Inicio</a>
+        <span> / </span>
+        <a href="../../index.html">Aseo</a>
+        <span> / </span>
+        <span>Percarbonato de Sodio</span>
+    </div>
+
+    <main>
+        <div class="container info-grid">
+            <section class="panel gallery-panel" aria-label="Galería del producto">
+                <div class="thumbs">
+                    <button class="thumb active" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                        aria-label="Ver imagen principal">
+                        <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                            alt="Percarbonato de sodio" />
+                    </button>
+                    <button class="thumb is-video" type="button" data-type="video"
+                        data-src="../../../assets/videos/percarbonato_video.mp4" aria-label="Ver video del producto">
+                        <img src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                            alt="Video de percarbonato" />
+                    </button>
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png"
+                        aria-label="Ver producto tipo kraft">
+                        <img src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png"
+                            alt="Percarbonato en presentación kraft" />
+                    </button>
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg"
+                        aria-label="Ver pack de 3 unidades">
+                        <img src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg"
+                            alt="Pack de 3 percarbonato" />
+                    </button>
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg"
+                        aria-label="Ver ejemplo de uso">
+                        <img src="../../../assets/img/productos/percarbonato/ejmplo%20de%20uso.jpeg"
+                            alt="Ejemplo de uso del percarbonato" />
+                    </button>
+                </div>
+                <div class="thumb-hint" aria-hidden="true">Desliza para ver más</div>
+
+                <div class="main-image-shell">
+                    <div class="product-shot">
+                        <img id="mainMediaImage"
+                            src="../../../assets/img/productos/percarbonato/contenido%20percarbonato.png"
+                            alt="Percarbonato de sodio" />
+                        <video id="mainMediaVideo" src="../../../assets/videos/percarbonato_video.mp4" controls
+                            playsinline style="display:none;"></video>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel product-panel" aria-labelledby="producto-title">
+                <h2 id="producto-title" style="font-size: 2rem; color: var(--brand-blue); margin-bottom: 8px;">
+                    Percarbonato de Sodio</h2>
+                <p style="color: var(--muted-text); margin-bottom: 8px; font-size: 1.02rem;">
+                    ¿Manchas que el detergente normal ya no saca? Esto sí las saca.
+                </p>
+
+                <ul class="feature-list">
+                    <li>Ropa blanca amarillenta → blanca de nuevo en una sola noche de remojo</li>
+                    <li>Manchas de sudor, vino o grasa → fuera con 10-20 min de pasta activa</li>
+                    <li>Juntas de cerámica ennegrecidas → blancas en 2-3 min de cepillado</li>
+                    <li>Sin cloro: no destiñe, no maltrata la tela, no deja olor a químico</li>
+                </ul>
+
+                <div class="shipping-note">
+                    🚚 Envío a todo Chile · 🔒 Compra protegida por Mercado Libre · ⭐ Garantía de vendedor
+                </div>
+            </section>
+
+            <aside class="panel buy-box" id="comprar">
+                <div class="buy-box-header">
+                    <h3>⚡ ¡Elige tu oferta y ahorra hoy!</h3>
+                    <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en
+                        Mercado Libre.</p>
+                </div>
+
+                <div class="pack-grid">
+                    <!-- OFERTA 1: 1 KG -->
+                    <div class="pack-card">
+                        <div class="pack-image-container">
+                            <img src="../../../assets/img/productos/percarbonato/percarbonato%20kraft.png"
+                            alt="Percarbonato en presentación kraft" class="pack-thumb" />
+                        </div>
+                        <div class="pack-info">
+                            <span class="pack-badge-light">Formato Individual</span>
+                            <span class="pack-name">Oferta 1 • 1 kg</span>
+                            <div class="price">$5.900</div>
+                            <span class="pack-meta">Individual para uso diario</span>
+                        </div>
+                        <div class="pack-action">
+                            <a href="https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=Wms0vq6j-C_ZU-sSCBdhTrIafDbToibHujUOgHAOKwJbpD7p#origin=share&sid=share&action=copy"
+                                target="_blank" rel="noopener" class="btn-meli">
+                                <span>Comprar en</span>
+                                <strong>Mercado Libre ➔</strong>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- OFERTA 2: PACK 3 KG (DESTACADO / MÁS VENDIDO) -->
+                    <div class="pack-card featured">
+                        <div class="featured-ribbon">🔥 MÁS VENDIDO</div>
+                        <div class="pack-image-container">
+                           <img src="../../../assets/img/productos/percarbonato/pack%203%20percarbonato%20kraft%20b.jpeg"
+                            alt="Pack de 3 percarbonato" class="pack-thumb" />
+                        </div>
+                        <div class="pack-info">
+                            <span class="pack-badge-featured">Pack Ahorro</span>
+                            <span class="pack-name">Oferta 2 • Pack 3 kilos</span>
+                            <div class="price">$16.900 <span class="price-discount">¡Ahorras más!</span></div>
+                            <span class="pack-meta">Ideal para ahorrar y reabastecer</span>
+                        </div>
+                        <div class="pack-action">
+                            <a href="https://www.mercadolibre.cl/up/MLCU4698513920?matt_tool=94515950&pdp_filters=item_id:MLC4330570176&ua=il2m3wf1c3MrY76dZXNVaPgMIguSHMqVupGeiYnjjSpsDl_V#origin=share&sid=share&wid=MLC4330570176&action=copy"
+                                target="_blank" rel="noopener" class="btn-meli btn-meli-highlight">
+                                <span>Comprar Pack en</span>
+                                <strong>Mercado Libre ➔</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buy-trust-footer">
+                    <span>🔒 Compra 100% Segura y Protegida por Mercado Pago</span>
+                </div>
+            </aside>
+        </div>
+
+        <!-- SECCIÓN: BENEFICIOS / ¿POR QUÉ ELEGIR OXÍGENO ACTIVO? -->
+        <section class="section" id="beneficios">
+            <h3 class="section-title">¿Por qué elegir oxígeno activo?</h3>
+            <div class="feature-cards-horizontal">
+
+                <article class="horizontal-card">
+                    <div class="feature-icon-wrapper">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
+                            alt="Quita manchas difíciles" />
+                    </div>
+                    <div class="feature-body">
+                        <h4>Quita manchas difíciles</h4>
+                        <p>Elimina manchas de vino, café, sangre, grasa, sudor y suciedad acumulada en telas.</p>
+                    </div>
+                </article>
+
+                <article class="horizontal-card">
+                    <div class="feature-icon-wrapper">
+                        <img src="../../../assets/img/iconos/percarbonato/icono detergente.png"
+                            alt="Más seguro y ecológico" />
+                    </div>
+                    <div class="feature-body">
+                        <h4>Más seguro y ecológico</h4>
+                        <p>Blanquea sin cloro, cuida tus prendas y ayuda a mantener un enfoque más responsable.</p>
+                    </div>
+                </article>
+
+                <article class="horizontal-card">
+                    <div class="feature-icon-wrapper">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
+                            alt="Ideal para todo tipo de ropa" />
+                    </div>
+                    <div class="feature-body">
+                        <h4>Ideal para todo tipo de ropa</h4>
+                        <p>Funciona muy bien en ropa blanca y en prendas de color resistente.</p>
+                    </div>
+                </article>
+
+                <article class="horizontal-card">
+                    <div class="feature-icon-wrapper">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
+                            alt="Económico y práctico" />
+                    </div>
+                    <div class="feature-body">
+                        <h4>Económico y práctico</h4>
+                        <p>Un formato de 1 kg que rinde mucho y facilita la rutina de limpieza diaria.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Referencia rápida</h3>
+            <div class="three-pod-grid">
+                <article class="pod-card">
+                    <span class="pod-label">¿Qué es?</span>
+                    <h4><b>No es cloro.</b> Es oxígeno activo que hace el trabajo pesado por ti.</h4>
+                    <p>Al contacto con agua tibia (40-60°C) libera oxígeno activo que rompe manchas, sarro y bacterias a
+                        nivel molecular — sin corroer, sin decolorar, sin ese olor a químico agresivo.</p>
+                </article>
+
+                <article class="pod-card">
+                    <span class="pod-label">Beneficios</span>
+                    <ul>
+                        <li>Quita manchas visibles en ropa y textiles.</li>
+                        <li>Ayuda a desincrustar griferías y superficies.</li>
+                        <li>Reduce el uso de productos agresivos.</li>
+                    </ul>
+                </article>
+
+                <article class="pod-card">
+                    <span class="pod-label">Características</span>
+                    <ul>
+                        <li>Formato de 1 kg, rendidor y fácil de usar.</li>
+                        <li>Ideal para lavadora, remojo y limpieza general.</li>
+                        <li>1 kg = hasta 50 usos · se activa mejor a 40-60°C (en frío rinde menos)</li>
+                        <li>100% libre de cloro, apto para ropa de color</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Información complementaria</h3>
+            <div class="manual-info-grid">
+
+                <article class="manual-info-card">
+                    <div class="card-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png" alt="Dosis" />
+                    </div>
+                    <div class="card-content">
+                        <span class="mini-label">Dosis</span>
+                        <h4>Base recomendada</h4>
+                        <p>Usa 1 a 2 cucharadas soperas por cada 3 litros de agua, según la intensidad de la suciedad.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="manual-info-card">
+                    <div class="card-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png" alt="Temperatura" />
+                    </div>
+                    <div class="card-content">
+                        <span class="mini-label">Temperatura</span>
+                        <h4>Se activa con calor</h4>
+                        <p>La acción es más efectiva entre 40°C y 60°C, ideal para reforzar la limpieza en lavado y
+                            remojo.</p>
+                    </div>
+                </article>
+
+                <article class="manual-info-card">
+                    <div class="card-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_no_usar.png" alt="Precaución" />
+                    </div>
+                    <div class="card-content">
+                        <span class="mini-label">Precaución</span>
+                        <h4>Importante</h4>
+                        <p>No lo mezcles con cloro ni con productos ácidos; úsalo con detergente o en solución por
+                            separado.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Modo de uso</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Reforzador de lavado</h4>
+                    <p>Añade 1 a 2 cucharadas junto a tu detergente habitual en la lavadora.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Remojo para manchas difíciles</h4>
+                    <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para color y
+                        hasta 2 horas para blanco.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Resultado visible</h4>
+                    <p>Luego lava normalmente y disfruta de una ropa más limpia, blanca y fresca.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1: PASTA QUITAMANCHAS -->
+        <section class="section" id="pasta-quitamanchas">
+            <h3 class="section-title">Pasta Quitamanchas</h3>
+            <div class="steps-grid">
+
+                <article class="step-card">
+                    <span class="step-badge">1</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png"
+                            alt="Preparar pasta quitamanchas" />
+                    </div>
+                    <h4>PREPARAR</h4>
+                    <p><strong>1 cucharada</strong> de percarbonato con unas gotas de agua tibia y forma una pasta
+                        espesa.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">2</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
+                            alt="Aplicar sobre la mancha" />
+                    </div>
+                    <h4>APLICAR</h4>
+                    <p>Cubre la mancha directamente y frota suavemente con los dedos o cepillo suave.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">3</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png"
+                            alt="Esperar de 10 a 20 minutos" />
+                    </div>
+                    <h4>ESPERAR</h4>
+                    <p>Deja actuar <strong>10 a 20 minutos</strong> (40 - 60 °C).</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">4</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
+                            alt="Lavar en lavadora" />
+                    </div>
+                    <h4>LAVAR</h4>
+                    <p>Lavado normal en la lavadora.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: MÉTODOS MULTIUSO EN EL HOGAR -->
+        <section class="section" id="metodos-multiuso">
+            <h3 class="section-title">Métodos Multiuso en el Hogar</h3>
+
+            <div class="banner-water-alert">
+                💧 SIEMPRE CON AGUA TIBIA O CALIENTE
+            </div>
+
+            <div class="multiuso-grid">
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_limpia_juntas.png"
+                            alt="Limpieza de juntas" />
+                    </div>
+                    <h4>Juntas</h4>
+                    <p>Pasta de percarbonato sobre las juntas, <strong>2 a 3 minutos</strong> y frota con cepillo.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mascotas.png" alt="Mascotas" />
+                    </div>
+                    <h4>Mascotas</h4>
+                    <p>Remoja comederos, bebederos y mantas.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
+                            alt="Rutina semanal" />
+                    </div>
+                    <h4>Rutina Semanal</h4>
+                    <p>Agrega una dosis de percarbonato en todos tus lavados.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/percarbonato/icono_utensilios.png"
+                            alt="Vajilla y utensilios" />
+                    </div>
+                    <h4>Vajilla</h4>
+                    <p>Disuelve <strong>1 a 2 cucharadas</strong>, deja 3 minutos para manchas difíciles.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Especificaciones técnicas</h3>
+            <div class="reviews">
+                <article class="review">
+                    <div class="stars">◉</div>
+                    <p><strong>Producto:</strong> Percarbonato - Oxígeno Activo</p>
+                    <small>Calidad y confianza para tu rutina diaria.</small>
+                </article>
+                <article class="review">
+                    <div class="stars">◉</div>
+                    <p><strong>Contenido neto:</strong> 1 kilogramo</p>
+                    <small>Cada envase es de 1 kilogramo de formato, práctico y bastante rendidor.</small>
+                </article>
+                <article class="review">
+                    <div class="stars">◉</div>
+                    <p><strong>Distribuido por:</strong> TucompraOk</p>
+                    <small>Distribuido para una limpieza responsable y efectiva.</small>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="faq">
+            <h3 class="section-title">Preguntas frecuentes</h3>
+            <div class="manual-info-grid">
+                <article class="manual-info-card">
+                    <h4>¿Sirve en agua fría?</h4>
+                    <p>Funciona, pero rinde menos. Su mejor activación es entre 40°C y 60°C.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Destiñe la ropa de color?</h4>
+                    <p>No. Al no tener cloro, es seguro para prendas de color resistente.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Cuánto me dura 1 kg?</h4>
+                    <p>Aproximadamente 50 usos, según la dosis que necesites.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Puedo mezclarlo con mi detergente normal?</h4>
+                    <p>Sí, se usa junto a tu detergente habitual como refuerzo.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Es apto cerca de mis mascotas?</h4>
+                    <p>Sí, para lavar comederos y bebederos. No lo apliques directo sobre el animal.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Puedo usarlo en lana o seda?</h4>
+                    <p>No lo recomendamos: puede dañar fibras delicadas, cuero, metales o madera.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-copy">
+                <h3>TuCompraOK</h3>
+                <p>Calidad, practicidad y bienestar para tu día a día.</p>
+            </div>
+            <div class="footer-links">
+                <a href="../../../index.html">Inicio</a>
+                <a href="#comprar">Comprar</a>
+                <a href="#beneficios">Beneficios</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mediaImage = document.getElementById('mainMediaImage');
+        const mediaVideo = document.getElementById('mainMediaVideo');
+        const thumbs = document.querySelectorAll('.thumb');
+
+        thumbs.forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                const type = thumb.dataset.type;
+                const src = thumb.dataset.src;
+
+                thumbs.forEach((item) => item.classList.remove('active'));
+                thumb.classList.add('active');
+
+                if (type === 'video') {
+                    mediaImage.style.display = 'none';
+                    mediaVideo.style.display = 'block';
+                    mediaVideo.src = src;
+                    mediaVideo.load();
+                    mediaVideo.play().catch(() => { });
+                } else {
+                    mediaVideo.style.display = 'none';
+                    mediaImage.style.display = 'block';
+                    mediaImage.src = src;
+                    mediaImage.alt = thumb.getAttribute('aria-label') || 'Percarbonato de sodio';
+                    mediaVideo.pause();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
