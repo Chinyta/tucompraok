@@ -623,6 +623,13 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
+            min-width: 0;
+        }
+
+        .pack-left .price {
+            font-size: 1.7rem;
+            line-height: 1.1;
+            margin-bottom: 2px;
         }
 
         .pack-name {
@@ -945,22 +952,43 @@
         }
 
         @media (max-width: 900px) {
-            .hero-shell,
-            .info-grid,
+            .info-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .gallery-panel,
+            .product-panel,
+            .buy-box,
             .feature-cards,
             .steps,
             .reviews,
+            .three-pod-grid,
+            .manual-info-grid,
             .footer-content {
                 grid-template-columns: 1fr;
             }
 
-            .hero-shell {
-                gap: 26px;
+            .gallery-panel,
+            .product-panel,
+            .buy-box {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+                width: 100%;
             }
 
-            .visual-card {
-                width: min(100%, 420px);
-                min-height: 340px;
+            .gallery-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .thumbs {
+                flex-direction: row;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 6px;
+            }
+
+            .main-image-shell {
+                min-height: 380px;
             }
 
             .feature-cards {
@@ -995,13 +1023,37 @@
 
             .feature-cards,
             .steps,
-            .reviews {
+            .reviews,
+            .three-pod-grid,
+            .manual-info-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .gallery-panel,
+            .product-panel,
+            .buy-box,
+            .section {
+                padding: 18px 16px;
+            }
+
+            .thumbs {
+                gap: 10px;
+            }
+
+            .thumb {
+                width: 68px;
+                height: 68px;
+                flex-shrink: 0;
             }
 
             .pack-card {
                 align-items: flex-start;
                 flex-direction: column;
+            }
+
+            .pack-right {
+                align-items: flex-start;
+                text-align: left;
             }
 
             .logo {
