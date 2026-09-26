@@ -300,23 +300,179 @@
             font-weight: 700;
         }
 
+        /*nuevo*/
+        /* --- COMPRA DESTACADA / MERCADO LIBRE --- */
+        .buy-box {
+            padding: 24px;
+            background: #FFFFFF;
+            border: 2px solid #FFE600;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .buy-box-header h3 {
+            font-size: 1.45rem;
+            color: var(--brand-blue);
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .buy-box-subtitle {
+            font-size: 0.88rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .pack-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pack-card {
+            position: relative;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 18px;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Opción Destacada (Pack 3 Kg) */
+        .pack-card.featured {
+            background: #FFFDF0;
+            border: 2px solid #FFE600;
+            box-shadow: 0 6px 18px rgba(255, 230, 0, 0.25);
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -12px;
+            left: 16px;
+            background: #2D3277;
+            color: #FFF;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .pack-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .pack-badge-light {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6B7280;
+            text-transform: uppercase;
+        }
+
+        .pack-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1F2937;
+        }
+
+        .pack-left .price {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #111827;
+            margin: 2px 0;
+        }
+
+        .price-discount {
+            font-size: 0.78rem;
+            color: #D97706;
+            font-weight: 700;
+            background: #FEF3C7;
+            padding: 2px 6px;
+            border-radius: 6px;
+            vertical-align: middle;
+        }
+
+        .pack-meta {
+            font-size: 0.82rem;
+            color: #6B7280;
+        }
+
+        /* BOTÓN OFICIAL MERCADO LIBRE */
+        .btn-meli {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFE600;
+            color: #2D3277;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .btn-meli span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            line-height: 1;
+            opacity: 0.9;
+        }
+
+        .btn-meli strong {
+            font-size: 0.92rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .btn-meli:hover {
+            background-color: #F5DC00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-meli-highlight {
+            background-color: #FFE600;
+            border: 1px solid #E6CF00;
+        }
+
+        .buy-trust-footer {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4B5563;
+            font-weight: 600;
+            border-top: 1px solid #F3F4F6;
+            padding-top: 12px;
+        }
+
+        /*anterior*/
+/*
         .buy-box {
             padding: 28px;
             background: linear-gradient(180deg, #ffffff 0%, #fffaf4 100%);
-        }
+        }*/
 
         .buy-box h3 {
             font-size: 1.65rem;
             margin-bottom: 8px;
             color: var(--brand-blue);
         }
-
+/*
         .buy-box-subtitle {
             font-size: 0.92rem;
             color: var(--muted-text);
             margin-bottom: 18px;
         }
-
         .pack-grid {
             display: grid;
             gap: 14px;
@@ -412,7 +568,7 @@
             margin-top: 6px;
             width: fit-content;
         }
-
+*/
         .section {
             margin-top: 32px;
             background: var(--card-bg);
@@ -880,37 +1036,49 @@
             </section>
 
             <aside class="panel buy-box" id="comprar">
-                <h3>Elige tu oferta</h3>
-                <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en Mercado Libre.</p>
-                <div class="pack-grid">
-                    <a class="pack-card active"
-                        href="https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=Wms0vq6j-C_ZU-sSCBdhTrIafDbToibHujUOgHAOKwJbpD7p#origin=share&sid=share&action=copy"
-                        target="_blank" rel="noopener">
-                        <div class="pack-left">
-                            <div class="price">$5.900</div>
-                            <span class="pack-name">Oferta 1 • 1 kg</span>
-                            <span class="pack-meta">Individual para uso diario</span>
-                        </div>
-                        <div class="pack-right">
-                            <span class="pack-platform">Mercado Libre</span>
-                            <span class="pack-price">Comprar</span>
-                        </div>
-                    </a>
+                <div class="buy-box-header">
+                    <h3>⚡ ¡Elige tu pack y ahorra hoy!</h3>
+                    <p class="buy-box-subtitle">Garantía de satisfación · Envío rápido a todo Chile</p>
+                </div>
 
-                    <a class="pack-card"
-                        href="https://www.mercadolibre.cl/up/MLCU4698513920?matt_tool=94515950&pdp_filters=item_id:MLC4330570176&ua=il2m3wf1c3MrY76dZXNVaPgMIguSHMqVupGeiYnjjSpsDl_V#origin=share&sid=share&wid=MLC4330570176&action=copy"
-                        target="_blank" rel="noopener">
+                <div class="pack-grid">
+                    <!-- OFERTA 1 -->
+                    <div class="pack-card">
                         <div class="pack-left">
-                            <div class="price">$16.900</div>
-                            <span class="pack-name">Oferta 2 • Pack 3 kilos</span>
-                            <span class="pack-meta">Ideal para ahorrar y reabastecer</span>
-                            <span class="pack-badge">Más vendido</span>
+                            <span class="pack-badge-light">Formato Individual</span>
+                            <span class="pack-name">1 Kilogramo</span>
+                            <div class="price">$5.900</div>
+                            <span class="pack-meta">Ideal para probar o uso diario</span>
                         </div>
                         <div class="pack-right">
-                            <span class="pack-platform">Mercado Libre</span>
-                            <span class="pack-price">Comprar</span>
+                            <a href="https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=Wms0vq6j-C_ZU-sSCBdhTrIafDbToibHujUOgHAOKwJbpD7p#origin=share&sid=share&action=copy"
+                                target="_blank" rel="noopener" class="btn-meli">
+                                <span>Comprar en</span>
+                                <strong>Mercado Libre ➔</strong>
+                            </a>
                         </div>
-                    </a>
+                    </div>
+
+                    <!-- OFERTA 2 (DESTACADA) -->
+                    <div class="pack-card featured">
+                        <div class="featured-ribbon">🔥 MÁS VENDIDO - MEJOR VALOR</div>
+                        <div class="pack-left">
+                            <span class="pack-name">Pack Ahorro • 3 Kilos</span>
+                            <div class="price">$16.900 <span class="price-discount">¡Ahorras dinero!</span></div>
+                            <span class="pack-meta">Recomendado para reabastecer el hogar</span>
+                        </div>
+                        <div class="pack-right">
+                            <a href="https://www.mercadolibre.cl/up/MLCU4698513920?matt_tool=94515950&pdp_filters=item_id:MLC4330570176&ua=il2m3wf1c3MrY76dZXNVaPgMIguSHMqVupGeiYnjjSpsDl_V#origin=share&sid=share&wid=MLC4330570176&action=copy"
+                                target="_blank" rel="noopener" class="btn-meli btn-meli-highlight">
+                                <span>Comprar Pack en</span>
+                                <strong>Mercado Libre ➔</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buy-trust-footer">
+                    <span>🔒 Compra 100% Segura y Protegida por Mercado Pago</span>
                 </div>
             </aside>
         </div>
@@ -1009,7 +1177,8 @@
                     <div class="card-content">
                         <span class="mini-label">Dosis</span>
                         <h4>Base recomendada</h4>
-                        <p>Usa 1 a 2 cucharadas soperas por cada 3 litros de agua, según la intensidad de la suciedad.</p>
+                        <p>Usa 1 a 2 cucharadas soperas por cada 3 litros de agua, según la intensidad de la suciedad.
+                        </p>
                     </div>
                 </article>
 
@@ -1020,7 +1189,8 @@
                     <div class="card-content">
                         <span class="mini-label">Temperatura</span>
                         <h4>Se activa con calor</h4>
-                        <p>La acción es más efectiva entre 40°C y 60°C, ideal para reforzar la limpieza en lavado y remojo.</p>
+                        <p>La acción es más efectiva entre 40°C y 60°C, ideal para reforzar la limpieza en lavado y
+                            remojo.</p>
                     </div>
                 </article>
 
@@ -1031,7 +1201,8 @@
                     <div class="card-content">
                         <span class="mini-label">Precaución</span>
                         <h4>Importante</h4>
-                        <p>No lo mezcles con cloro ni con productos ácidos; úsalo con detergente o en solución por separado.</p>
+                        <p>No lo mezcles con cloro ni con productos ácidos; úsalo con detergente o en solución por
+                            separado.</p>
                     </div>
                 </article>
 
@@ -1049,7 +1220,8 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h4>Remojo para manchas difíciles</h4>
-                    <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para color y hasta 2 horas para blanco.</p>
+                    <p>Disuelve 2 cucharadas en 4 litros de agua tibia o caliente. Deja remojar 30 minutos para color y
+                        hasta 2 horas para blanco.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
@@ -1067,16 +1239,19 @@
                 <article class="step-card">
                     <span class="step-badge">1</span>
                     <div class="step-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png" alt="Preparar pasta quitamanchas" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_mezcla.png"
+                            alt="Preparar pasta quitamanchas" />
                     </div>
                     <h4>PREPARAR</h4>
-                    <p><strong>1 cucharada</strong> de percarbonato con unas gotas de agua tibia y forma una pasta espesa.</p>
+                    <p><strong>1 cucharada</strong> de percarbonato con unas gotas de agua tibia y forma una pasta
+                        espesa.</p>
                 </article>
 
                 <article class="step-card">
                     <span class="step-badge">2</span>
                     <div class="step-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png" alt="Aplicar sobre la mancha" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
+                            alt="Aplicar sobre la mancha" />
                     </div>
                     <h4>APLICAR</h4>
                     <p>Cubre la mancha directamente y frota suavemente con los dedos o cepillo suave.</p>
@@ -1085,7 +1260,8 @@
                 <article class="step-card">
                     <span class="step-badge">3</span>
                     <div class="step-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png" alt="Esperar de 10 a 20 minutos" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_temperatura.png"
+                            alt="Esperar de 10 a 20 minutos" />
                     </div>
                     <h4>ESPERAR</h4>
                     <p>Deja actuar <strong>10 a 20 minutos</strong> (40 - 60 °C).</p>
@@ -1094,7 +1270,8 @@
                 <article class="step-card">
                     <span class="step-badge">4</span>
                     <div class="step-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png" alt="Lavar en lavadora" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
+                            alt="Lavar en lavadora" />
                     </div>
                     <h4>LAVAR</h4>
                     <p>Lavado normal en la lavadora.</p>
@@ -1114,7 +1291,8 @@
             <div class="multiuso-grid">
                 <article class="multiuso-card">
                     <div class="multiuso-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_limpia_juntas.png" alt="Limpieza de juntas" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_limpia_juntas.png"
+                            alt="Limpieza de juntas" />
                     </div>
                     <h4>Juntas</h4>
                     <p>Pasta de percarbonato sobre las juntas, <strong>2 a 3 minutos</strong> y frota con cepillo.</p>
@@ -1130,7 +1308,8 @@
 
                 <article class="multiuso-card">
                     <div class="multiuso-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png" alt="Rutina semanal" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
+                            alt="Rutina semanal" />
                     </div>
                     <h4>Rutina Semanal</h4>
                     <p>Agrega una dosis de percarbonato en todos tus lavados.</p>
@@ -1138,7 +1317,8 @@
 
                 <article class="multiuso-card">
                     <div class="multiuso-icon">
-                        <img src="../../../assets/img/iconos/percarbonato/icono_utensilios.png" alt="Vajilla y utensilios" />
+                        <img src="../../../assets/img/iconos/percarbonato/icono_utensilios.png"
+                            alt="Vajilla y utensilios" />
                     </div>
                     <h4>Vajilla</h4>
                     <p>Disuelve <strong>1 a 2 cucharadas</strong>, deja 3 minutos para manchas difíciles.</p>
@@ -1163,6 +1343,35 @@
                     <div class="stars">◉</div>
                     <p><strong>Distribuido por:</strong> TucompraOk</p>
                     <small>Distribuido para una limpieza responsable y efectiva.</small>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="faq">
+            <h3 class="section-title">Preguntas frecuentes</h3>
+            <div class="manual-info-grid">
+                <article class="manual-info-card">
+                    <h4>¿Sirve en agua fría?</h4>
+                    <p>Funciona, pero rinde menos. Su mejor activación es entre 40°C y 60°C.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Destiñe la ropa de color?</h4>
+                    <p>No. Al no tener cloro, es seguro para prendas de color resistente.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Cuánto me dura 1 kg?</h4>
+                    <p>Aproximadamente 50 usos, según la dosis que necesites.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Puedo mezclarlo con mi detergente normal?</h4>
+                    <p>Sí, se usa junto a tu detergente habitual como refuerzo.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Es apto cerca de mis mascotas?</h4>
+                    <p>Sí, para lavar comederos y bebederos. No lo apliques directo sobre el animal.</p>
+                </article>
+                <article class="manual-info-card">
+                    <h4>¿Puedo usarlo en lana o seda?</h4>
+                    <p>No lo recomendamos: puede dañar fibras delicadas, cuero, metales o madera.</p>
                 </article>
             </div>
         </section>
