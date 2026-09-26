@@ -1397,6 +1397,78 @@
             line-height: 1.45;
             margin: 0;
         }
+
+        /* Contenedor principal de tarjetas */
+.feature-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+/* Tarjeta principal horizontal */
+.feature-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e0e7ff;
+    border-radius: 16px;
+    padding: 16px;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Columna Izquierda: Imagen/Icono grande */
+.card-media {
+    flex-shrink: 0;
+    width: 90px;             /* Ajusta la anchura de la imagen según preferencia */
+    height: 90px;            /* Altura proporcional */
+    background-color: #f0f4f8; /* Fondo suave idéntico a las tarjetas previas */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     /* Mantiene la proporción del icono */
+}
+
+/* Columna Derecha: Contenido de texto */
+.card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.card-content h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d1b2a;         /* Azul marino principal de TuCompraOK */
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #556070;
+    line-height: 1.4;
+}
+
+/* Adaptación para pantallas pequeñas (Móviles estrechos) */
+@media (max-width: 360px) {
+    .feature-card {
+        padding: 12px;
+        gap: 12px;
+    }
+    .card-media {
+        width: 70px;
+        height: 70px;
+        padding: 8px;
+    }
+}
     </style>
 </head>
 
@@ -1533,39 +1605,47 @@
             <div class="feature-cards">
 
                 <article class="feature-card">
-                    <div class="icon">
+                    <div class="card-media">
                         <img src="../../../assets/img/iconos/percarbonato/icono_manchas_dificiles.png"
                             alt="Quita manchas difíciles" />
                     </div>
-                    <h4>Quita manchas difíciles</h4>
-                    <p>Elimina manchas de vino, café, sangre, grasa, sudor y suciedad acumulada en telas.</p>
+                    <div class="card-content">
+                        <h4>Quita manchas difíciles</h4>
+                        <p>Elimina manchas de vino, café, sangre, grasa, sudor y suciedad acumulada en telas.</p>
+                    </div>
                 </article>
 
                 <article class="feature-card">
-                    <div class="icon">
+                    <div class="card-media">
                         <img src="../../../assets/img/iconos/percarbonato/icono detergente.png"
                             alt="Más seguro y ecológico" />
                     </div>
-                    <h4>Más seguro y ecológico</h4>
-                    <p>Blanquea sin cloro, cuida tus prendas y ayuda a mantener un enfoque más responsable.</p>
+                    <div class="card-content">
+                        <h4>Más seguro y ecológico</h4>
+                        <p>Blanquea sin cloro, cuida tus prendas y ayuda a mantener un enfoque más responsable.</p>
+                    </div>
                 </article>
 
                 <article class="feature-card">
-                    <div class="icon">
+                    <div class="card-media">
                         <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_temperatura.png"
                             alt="Ideal para todo tipo de ropa" />
                     </div>
-                    <h4>Ideal para todo tipo de ropa</h4>
-                    <p>Funciona muy bien en ropa blanca y en prendas de color resistente.</p>
+                    <div class="card-content">
+                        <h4>Ideal para todo tipo de ropa</h4>
+                        <p>Funciona muy bien en ropa blanca y en prendas de color resistente.</p>
+                    </div>
                 </article>
 
                 <article class="feature-card">
-                    <div class="icon">
+                    <div class="card-media">
                         <img src="../../../assets/img/iconos/percarbonato/icono_lavadora_cuchara.png"
                             alt="Económico y práctico" />
                     </div>
-                    <h4>Económico y práctico</h4>
-                    <p>Un formato de 1 kg que rinde mucho y facilita la rutina de limpieza diaria.</p>
+                    <div class="card-content">
+                        <h4>Económico y práctico</h4>
+                        <p>Un formato de 1 kg que rinde mucho y facilita la rutina de limpieza diaria.</p>
+                    </div>
                 </article>
 
             </div>
@@ -1745,7 +1825,7 @@
                     </div>
                     <h4>Mascotas</h4>
                     <p>Remoja comederos, bebederos y mantas.</p>
-                </article> 
+                </article>
 
                 <article class="multiuso-card">
                     <div class="multiuso-icon">
