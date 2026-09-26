@@ -1,0 +1,34 @@
+{
+  "producto": {
+    "nombre": "Percarbonato de Sodio",
+    "categoria": "aseo_hogar"
+  },
+  
+  "packs": [
+    {
+      "id": "unit",
+      "nombre": "Unidad (1KG)",
+      "precio": "$12.990",
+      "badge": "MÁS VENDIDO",
+      "enlace": "https://mercadolibre.com.ar/item/MLM2023"
+    },
+    {
+      "id": "pack3",
+      "nombre": "Pack 3 (3KG)",
+      "precio": "$32.900",
+      "precioOriginal": "$38.970",
+      "descuento": "15%",
+      "badge": "AHORRA 15%",
+      "enlace": "https://mercadolibre.com.ar/item/MLM2024"
+    },
+    {
+      "id": "pack_duo",
+      "nombre": "Pack Dúo",
+      "precio": "$24.900",
+      "precioOriginal": "$25.980",
+      "descuento": "5%",
+      "badge": "COMBO",
+      "enlace": "https://mercadolibre.com.ar/item/MLM2025"
+    }
+  ]
+}

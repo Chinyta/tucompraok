@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuCompraOK - Tienda Online de Productos Premium</title>
+    <style>
+        :root {
+            --brand-blue: #1A237E;
+            --brand-blue-deep: #101a58;
+            --brand-orange: #F57C00;
+            --brand-orange-dark: #E65100;
+            --brand-gold: #D8B36A;
+            --brand-gold-soft: #F5EBDD;
+            --page-bg: #F7F3EE;
+            --card-bg: #FFFFFF;
+            --soft-bg: #F7F5F3;
+            --border: #E9E2D9;
+            --muted-text: #6B7280;
+            --dark-text: #1F2937;
+            --footer-bg: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #f9f7f4 0%, #f4f1ed 100%);
+            color: var(--dark-text);
+        }
+
+        ::selection {
+            background: rgba(245, 124, 0, 0.25);
+        }
+
+        /* Header */
+        header {
+            background: rgba(17, 26, 79, 0.96);
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 24px rgba(16, 26, 88, 0.18);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 84px;
+            padding: 0;
+            border-radius: 999px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: clamp(160px, 22vw, 260px);
+            height: clamp(54px, 7vw, 84px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            background: transparent;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: none;
+            padding: 0;
+            transition: transform 0.25s ease;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background: transparent;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.14));
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.02);
+        }
+
+        .logo-text {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: radial-gradient(circle at top left, rgba(216,179,106,0.22), transparent 35%),
+                        linear-gradient(135deg, var(--brand-blue-deep) 0%, var(--brand-blue) 42%, var(--brand-orange) 100%);
+            color: white;
+            padding: 64px 20px 92px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 0.9fr;
+            gap: 28px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            filter: blur(12px);
+        }
+
+        .hero::before {
+            left: -40px;
+            top: -80px;
+        }
+
+        .hero::after {
+            right: -30px;
+            bottom: -100px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(216,179,106,0.18);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #f8e7c6;
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 999px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero-copy {
+            max-width: 675px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 5.6rem);
+            margin-bottom: 18px;
+            font-weight: 800;
+            line-height: 0.94;
+            letter-spacing: -0.07em;
+            max-width: 660px;
+            text-wrap: balance;
+        }
+
+        .hero p {
+            font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 610px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .hero-message {
+            display: inline-block;
+            margin-top: 4px;
+            margin-bottom: 22px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #f7e7d3;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: flex-start;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: rgba(255, 255, 255, 0.96);
+            border-radius: 999px;
+            padding: 11px 18px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+        }
+
+        .promo-strip {
+            max-width: 1280px;
+            margin: -34px auto 0;
+            padding: 0 18px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .promo-inner {
+            background: linear-gradient(90deg, rgba(14, 28, 104, 0.96) 0%, rgba(245, 124, 0, 0.85) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 26px rgba(15, 22, 64, 0.12);
+            border-radius: 18px;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .promo-inner strong {
+            color: #ffffff;
+            font-size: clamp(1.15rem, 2vw, 2rem);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+        }
+
+        .promo-inner span {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .promo-tag {
+            background: linear-gradient(135deg, #ff8d20 0%, #ffb14d 100%);
+            color: white;
+            font-weight: 900;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            padding: 10px 18px;
+            box-shadow: 0 10px 18px rgba(245, 124, 0, 0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 320px;
+            position: relative;
+            z-index: 1;
+            padding: 8px 0;
+        }
+
+        .media-frame {
+            position: relative;
+            width: min(100%, 500px);
+            aspect-ratio: 1.24;
+            border-radius: 34px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 26px 64px rgba(15, 24, 76, 0.18);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+
+        .media-frame::before {
+            content: "";
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            bottom: -10%;
+            height: 24%;
+            background: rgba(18, 26, 78, 0.08);
+            border-radius: 30px;
+            filter: blur(18px);
+            z-index: 0;
+        }
+
+        .media-inner {
+            position: absolute;
+            inset: 10% 12%;
+            border-radius: 26px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.26), rgba(255,255,255,0.08));
+            border: 1px solid rgba(255,255,255,0.14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .media-inner video,
+        .media-inner img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.02);
+            filter: saturate(1.04) contrast(1.03);
+        }
+
+        .cart-scene {
+            position: relative;
+            width: min(100%, 330px);
+            height: 210px;
+            border-radius: 26px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(17, 26, 88, 0.18);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+
+        .cart-scene::before {
+            content: "";
+            position: absolute;
+            inset: 18px 18px auto 18px;
+            height: 2px;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .cart-rail {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            bottom: 28px;
+            height: 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+
+        .cart-rail::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 72%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+            animation: loadingBar 2s ease-in-out infinite;
+        }
+
+        .cart-icon {
+            position: absolute;
+            left: 32px;
+            top: 58px;
+            width: 88px;
+            height: 72px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.08));
+            border: 1px solid rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            box-shadow: inset 0 2px 8px rgba(255,255,255,0.08);
+            animation: cartFloat 2.8s ease-in-out infinite;
+        }
+
+        .cart-icon::before {
+            content: "🛒";
+            transform: translateY(2px);
+        }
+
+        .cart-path {
+            position: absolute;
+            left: 118px;
+            top: 100px;
+            width: 132px;
+            height: 22px;
+            border-top: 3px solid rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: pathPulse 2.8s ease-in-out infinite;
+        }
+
+        .check-badge {
+            position: absolute;
+            right: 30px;
+            top: 52px;
+            width: 86px;
+            height: 86px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7ee0a5, #39c96b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 18px 30px rgba(57, 201, 107, 0.28);
+            transform: scale(0.8);
+            animation: checkPop 2.8s ease-in-out infinite;
+        }
+
+        .check-badge::before {
+            content: "✓";
+            color: white;
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .status-text {
+            position: absolute;
+            left: 50%;
+            bottom: 28px;
+            transform: translateX(-50%);
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: rgba(17, 26, 79, 0.38);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .status-text strong {
+            color: #f7d48e;
+        }
+
+        @keyframes cartFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes pathPulse {
+            0%, 100% { opacity: 0.45; transform: scaleX(0.9); }
+            50% { opacity: 1; transform: scaleX(1.08); }
+        }
+
+        @keyframes checkPop {
+            0%, 100% { transform: scale(0.8); opacity: 0.86; }
+            40%, 60% { transform: scale(1.08); opacity: 1; }
+        }
+
+        @keyframes loadingBar {
+            0% { transform: translateX(-8%); }
+            50% { transform: translateX(15%); }
+            100% { transform: translateX(-8%); }
+        }
+
+        /* Filters */
+        .filters-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 18px;
+        }
+
+        .filter-btn {
+            padding: 14px 22px;
+            border: 2px solid rgba(26, 35, 126, 0.32);
+            background: rgba(255, 255, 255, 0.7);
+            color: var(--brand-blue);
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(17, 24, 39, 0.02);
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-1px);
+            border-color: rgba(26, 35, 126, 0.55);
+        }
+
+        .filter-btn.active {
+            border-color: transparent;
+            background: linear-gradient(135deg, var(--brand-orange) 0%, #ff9e3d 100%);
+            color: white;
+            box-shadow: 0 10px 18px rgba(245, 124, 0, 0.2);
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 2;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: white;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .product-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--brand-orange);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: var(--muted-text);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .product-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-detail {
+            background: var(--soft-bg);
+            color: var(--brand-blue);
+            border: 2px solid var(--brand-blue);
+        }
+
+        .btn-detail:hover {
+            background: var(--brand-blue);
+            color: white;
+        }
+
+        .btn-buy {
+            background: linear-gradient(180deg, #ffe55a 0%, #ffd100 100%);
+            color: #1a1a1a;
+            font-weight: 800;
+            border: 1px solid rgba(26, 26, 26, 0.08);
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.08), 0 4px 10px rgba(255, 209, 0, 0.18);
+            border-radius: 8px;
+            letter-spacing: 0.01em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-buy::before {
+            content: "◉";
+            font-size: 10px;
+            margin-right: 6px;
+            opacity: 0.8;
+            vertical-align: middle;
+        }
+
+        .btn-buy:hover {
+            background: linear-gradient(180deg, #ffe96f 0%, #ffce00 100%);
+            color: #111111;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 36px 18px 42px;
+            }
+
+            .hero-shell {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                max-width: 100%;
+            }
+
+            .hero p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .trust-badges {
+                justify-content: flex-start;
+            }
+
+            .hero-panel {
+                padding: 16px;
+            }
+
+            .logo {
+                min-height: 62px;
+            }
+
+            .logo-icon {
+                width: min(62vw, 220px);
+                height: 62px;
+            }
+
+            .promo-strip {
+                margin-top: -10px;
+                padding: 0 14px;
+            }
+
+            .promo-inner {
+                padding: 12px 14px;
+                border-radius: 14px;
+            }
+
+            .promo-inner strong,
+            .promo-inner span {
+                width: 100%;
+                text-align: left;
+            }
+
+            .promo-tag {
+                align-self: flex-start;
+            }
+
+            .filter-buttons {
+                padding: 0;
+            }
+
+            .filter-btn {
+                flex: 1 1 calc(50% - 8px);
+                min-width: 0;
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 150px;
+                font-size: 40px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-name {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo" aria-label="Logo de TuCompraOK">
+                <span class="logo-icon" aria-hidden="true">
+                    <img src="assets/img/logos/logo_fondo_transp_rectangular.png" alt="Logo TuCompraOK">
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-shell">
+            <div class="hero-copy">
+                <!--span class="eyebrow">Boutique Premium</span-->
+                <h1>Productos Premium a Mejores Precios</h1>
+                <p>Descubre nuestra selección de artículos pensados para acompañarte, facilitar tu día a día y aportar bienestar a tu hogar.</p>
+                <!--div class="hero-message">Productos seleccionados para acompañarte y cuidarte en tu rutina diaria.</div-->
+                <div class="trust-badges">
+                    <span class="trust-badge">✔ Envíos rápidos</span>
+                    <span class="trust-badge">⭐ Selección premium</span>
+                    <span class="trust-badge">🛡️ Compra segura</span>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Animación del logo TuCompraOK">
+                <div class="media-frame">
+                    <div class="media-inner">
+                        <video autoplay muted loop playsinline poster="assets/img/logos/logo_tienda.png">
+                            <source src="assets/videos/video_logo_1_1.mp4" type="video/mp4">
+                            <img src="assets/img/logos/GIF_animado_logo_1_1D.gif" alt="Logo animado TuCompraOK">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section class="promo-strip">
+        <div class="promo-inner">
+            <strong>Super ofertas del mes</strong>
+            <span>Productos seleccionados para tu hogar, bienestar y rutina diaria.</span>
+            <span class="promo-tag">Black Friday</span>
+        </div>
+    </section-->
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Ver Todos</button>
+            <button class="filter-btn" data-filter="tecnologia">🖥️ Tecnología</button>
+            <button class="filter-btn" data-filter="bienestar">💆 Bienestar</button>
+            <button class="filter-btn" data-filter="hogar">🏠 Hogar</button>
+            <button class="filter-btn" data-filter="aseo">🧴 Aseo Premium</button>
+            <button class="filter-btn" data-filter="herramientas">🔧 Herramientas</button>
+            <button class="filter-btn" data-filter="alimentos">🍽️ Alimentos</button>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="products-grid" id="productsGrid">
+            <!-- Los productos se cargarán aquí con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>TuCompraOK</h3>
+            <p>Tu tienda online de confianza</p>
+            <p>Compra seguro en Mercado Libre ✓ Envío a todo Chile</p>
+            <div class="social-links">
+                <a href="#" title="Instagram">📱</a>
+                <a href="#" title="Facebook">👍</a>
+                <a href="#" title="WhatsApp">💬</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">© 2025 TuCompraOK. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Base de datos de productos (editable)
+        const productos = [
+            {
+                id: 1,
+                nombre: "Percarbonato de Sodio - Oxígeno Activo",
+                categoria: "aseo",
+                descripcion: "1KG de oxígeno activo concentrado. Recupera blancura sin dañar telas.",
+                imagen: "assets/img/productos/percarbonato.jpg",
+                enlaceMercadoLibre: "https://articulo.mercadolibre.cl/MLC-2155649373?matt_tool=94515950&ua=NGq_CGl_AU5trIvkUpUl9a5M-rXtdkLSiramQT0AtNKsMwDp#origin=share&sid=share&action=copy",
+                slug: "Aseo/percarbonato",
+                badge: { text: "Éxito en Ventas", color: "#FF4D4D" }
+            },
+            {
+                id: 2,
+                nombre: "Detergente Premium para Ropa",
+                categoria: "aseo",
+                descripcion: "Detergente de alta calidad para lavado en máquina.",
+                imagen: "assets/img/productos/premium abierto.jpg",
+                enlaceMercadoLibre: "https://www.mercadolibre.cl/p/MLC2097861101?matt_tool=94515950&pdp_filters=item_id:MLC2193317895&ua=nkIfsMklJoxvtMwFeWSc5nHobyUivTjgAoJxasraMOsPIY0l#origin=share&sid=share&wid=MLC2193317895&action=copy",
+                slug: "detergente-premium",
+                badge: { text: "Navidad", color: "#1A237E" }
+            },
+            {
+                id: 3,
+                nombre: "Detergente Hipoalergénico",
+                categoria: "aseo",
+                descripcion: "Detergente suave para personas con piel sensible.",
+                imagen: "assets/img/productos/hipoalergenico.jpg",
+                enlaceMercadoLibre: "https://www.mercadolibre.cl/up/MLCU4919908665?matt_tool=94515950&pdp_filters=item_id:MLC2193866739&ua=Y4e3JUovq2VbbmR7mZkflz-xVWriS8Zk6qBGgjC6oisLwbqW#origin=share&sid=share&wid=MLC2193866739&action=copy",
+                slug: "detergente-hipoalergenico",
+                badge: { text: "Halloween", color: "#F57C00" }
+            },
+            {
+                id: 4,
+                nombre: "Lavalozas Concentrado Premium",
+                categoria: "aseo",
+                descripcion: "Lavalozas de alta calidad con fórmula concentrada.",
+                imagen: "assets/img/productos/lavalozas.jpg",
+                enlaceMercadoLibre: "https://mercadolibre.com.ar/...",
+                slug: "lavalozas-concentrado-premium"
+            },
+            {
+                id: 5,
+                nombre: "Aceite de Oliva Extra Virgen 1 Litro",
+                categoria: "alimentos",
+                descripcion: "Aceite de oliva extra virgen de primera prensa.",
+                imagen: "assets/img/productos/aceite litro c.jpg",
+                enlaceMercadoLibre: "https://www.mercadolibre.cl/up/MLCU4951716008?matt_tool=94515950&pdp_filters=item_id:MLC2193650177&ua=3zbCaGauAxkQfwSdQqnd0zabqgUzvUCYE7uNlfR9xkb1zRtN#origin=share&sid=share&wid=MLC2193650177&action=copy",
+                slug: "aceite-oliva-extra-virgen"
+            },
+            {
+                id: 6,
+                nombre: "Ácido Cítrico Natural para Limpieza",
+                categoria: "aseo",
+                descripcion: "Elimina sarro, descalcifica griferías y accesorios y limpia superficies de forma ecológica, efectiva y segura.",
+                imagen: "assets/img/productos/ácido-cítrico.jpg",
+                enlaceMercadoLibre: "https://mercadolibre.com.ar/...",
+                slug: "acido-citric-natural-limpieza",
+                badge: { text: "Eco", color: "#2E7D32" }
+            }
+        ];
+
+        // Función para renderizar productos
+        function renderizar(filtro = "all") {
+            const grid = document.getElementById("productsGrid");
+            grid.innerHTML = "";
+
+            const productosFiltrados = filtro === "all" 
+                ? productos 
+                : productos.filter(p => p.categoria === filtro);
+
+            productosFiltrados.forEach(producto => {
+                const card = document.createElement("div");
+                card.className = "product-card";
+                const imagenHtml = producto.imagen.startsWith("assets/") || producto.imagen.startsWith("http")
+                    ? `<img src="${producto.imagen}" alt="${producto.nombre}">`
+                    : producto.imagen;
+                const badgeHtml = producto.badge
+                    ? `<span class="product-badge" style="background:${producto.badge.color};">${producto.badge.text}</span>`
+                    : "";
+
+                card.innerHTML = `
+                    <div class="product-image">
+                        ${badgeHtml}
+                        ${imagenHtml}
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${producto.categoria}</span>
+                        <h3 class="product-name">${producto.nombre}</h3>
+                        <p class="product-description">${producto.descripcion}</p>
+                        <div class="product-buttons">
+                            <button class="btn btn-detail" onclick="irADetalle('${producto.slug}')">Ver Detalle</button>
+                            <a href="${producto.enlaceMercadoLibre}" class="btn btn-buy" target="_blank">Mercado Libre</a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filtros
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.addEventListener("click", function() {
+                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+                this.classList.add("active");
+                renderizar(this.dataset.filter);
+            });
+        });
+
+        // Función para ir a detalle (robusta para local y hosting)
+        function irADetalle(slug) {
+            if (!slug) return;
+
+            if (/^https?:\/\//i.test(slug)) {
+                window.location.href = slug;
+                return;
+            }
+
+            const basePath = slug.startsWith("./") || slug.startsWith("../") || slug.startsWith("productos/")
+                ? slug
+                : `./productos/${slug}/`;
+
+            window.location.href = basePath;
+        }
+
+        // Renderizar inicial
+        renderizar();
+    </script>
+</body>
+</html>
