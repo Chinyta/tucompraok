@@ -1024,6 +1024,7 @@
 
         /* RESPONSIVIDAD GENERAL */
         @media (max-width: 900px) {
+
             .steps-grid,
             .multiuso-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1131,6 +1132,7 @@
         }
 
         @media (max-width: 500px) {
+
             .steps-grid,
             .multiuso-grid {
                 grid-template-columns: 1fr;
@@ -1147,6 +1149,96 @@
 
             .faq-question {
                 font-size: 15px;
+            }
+        }
+
+        /* Estilos Base para Pantallas Grandes (PC / Tablet) */
+        .comparison-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .responsive-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .responsive-table th,
+        .responsive-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .responsive-table th {
+            background-color: #fef08a;
+            /* Fondo amarillo tenue del encabezado */
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .check-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background-color: #fef08a;
+            border: 1px solid #1f2937;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* --- ADAPTACIÓN AUTOMÁTICA PARA CELULAR --- */
+        @media (max-width: 600px) {
+
+            .responsive-table,
+            .responsive-table tbody,
+            .responsive-table tr,
+            .responsive-table td {
+                display: block;
+                /* Rompe la estructura de tabla tradicional */
+                width: 100%;
+            }
+
+            /* Ocultamos los encabezados superiores de la tabla */
+            .responsive-table thead {
+                display: none;
+            }
+
+            /* Transformamos cada fila en una fila limpia y legible */
+            .responsive-table tr {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 16px;
+                border-bottom: 1px solid #e5e7eb;
+                background-color: #ffffff;
+            }
+
+            .responsive-table tr:last-child {
+                border-bottom: none;
+            }
+
+            /* Ajustes del texto e icono en móvil */
+            .responsive-table td {
+                border: none;
+                padding: 0;
+                width: auto;
+            }
+
+            .responsive-table td[data-label="Característica"] {
+                font-weight: 500;
+                color: #1f2937;
+                font-size: 15px;
+                padding-right: 12px;
             }
         }
     </style>
@@ -1518,62 +1610,41 @@
 
         <!-- SECCIÓN COMPARATIVA -->
         <section class="comparison-container">
-            <div class="comparison-content">
-                <div class="comparison-text-side">
-                    <h2 class="comp-heading">Por qué elegir percarbonato de sodio</h2>
-                    <p class="comp-description">
-                        Los blanqueadores con cloro decoloran telas, irritan la piel y vierten compuestos tóxicos al
-                        agua. El percarbonato de sodio actúa con la misma efectividad pero de forma completamente
-                        natural. La diferencia se nota en tu ropa, en tu piel y en el ambiente.
-                    </p>
-                    <a href="#comprar" class="btn-comp-yellow">COMPRAR AHORA</a>
-                </div>
-
-                <div class="comparison-table-wrapper">
-                    <table class="comp-card-table">
-                        <thead>
-                            <tr>
-                                <th class="col-feature"></th>
-                                <th class="col-our-product">
-                                    <div class="floating-header">Nuestro producto</div>
-                                </th>
-                                <th class="col-others">Otros</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="feature-text">Sin cloro ni tóxicos</td>
-                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                                <td><span class="icon-cross">✕</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">Biodegradable al 100 %</td>
-                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                                <td><span class="icon-cross">✕</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">Seguro para ropa de color</td>
-                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                                <td><span class="icon-cross">✕</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">No irrita la piel</td>
-                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                                <td><span class="icon-cross">✕</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">Potencia el detergente</td>
-                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                                <td><span class="icon-cross">✕</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">Desinfecta sin residuos</td>
-                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
-                                <td><span class="icon-cross">✕</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="comparison-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Nuestro producto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Característica">Sin cloro ni tóxicos</td>
+                            <td data-label="Nuestro producto"><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Característica">Biodegradable al 100 %</td>
+                            <td data-label="Nuestro producto"><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Característica">Seguro para ropa de color</td>
+                            <td data-label="Nuestro producto"><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Característica">No irrita la piel</td>
+                            <td data-label="Nuestro producto"><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Característica">Potencia el detergente</td>
+                            <td data-label="Nuestro producto"><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Característica">Desinfecta sin residuos</td>
+                            <td data-label="Nuestro producto"><span class="check-icon">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
