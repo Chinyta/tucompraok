@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ácido Cítrico Anhidro - TuCompraOK</title>
+
+    <!-- Fuente sans-serif moderna de TuCompraOK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Tipografía */
+            --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Paleta de colores TuCompraOK */
+            --header-navy: #1E2952;
+            --brand-orange: #FF6B00;
+            --brand-green: #2E7D32;
+            --green-bg: #E8F5E9;
+            --accent-yellow: #FFD600;
+            --yellow-hover: #E6C200;
+            --bg-body: #F2F4F8;
+            --bg-card: #FFFFFF;
+            --bg-offer-box: #F9FAFC;
+            --bg-accent-box: #FBF8F3;
+            --bg-faq-card: #FFFDF0;
+            --badge-navy: #1E2952;
+            --text-main: #222222;
+            --text-muted: #556070;
+            --border-light: #E2E8F0;
+            --border-accent: #EFE4D6;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+        }
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.5;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(17, 26, 79, 0.96);
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 24px rgba(16, 26, 88, 0.18);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 84px;
+            background: transparent;
+            border: none;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: clamp(170px, 23vw, 260px);
+            height: clamp(54px, 7vw, 84px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 0.25s ease;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.14));
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.02);
+        }
+
+        /* BREADCRUMBS */
+        .breadcrumbs {
+            max-width: 1100px;
+            margin: 20px auto 10px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .breadcrumbs a {
+            color: var(--header-navy);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 20px 40px 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: start;
+        }
+
+        /* GALERÍA DE PRODUCTO */
+        .gallery-panel {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            display: flex;
+            gap: 16px;
+            position: relative;
+            max-width: 100%;
+        }
+
+        .thumbs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 480px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+
+        .thumb {
+            border: 2px solid var(--border-light);
+            background: transparent;
+            border-radius: var(--radius-md);
+            padding: 0;
+            cursor: pointer;
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            overflow: hidden;
+            position: relative;
+            transition: border-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .thumb:hover {
+            transform: translateY(-2px);
+        }
+
+        .thumb.active {
+            border-color: var(--header-navy);
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .thumb.is-video::after {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 41, 82, 0.8);
+            color: #fff;
+            font-size: 10px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb-hint {
+            display: none;
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .main-image-shell {
+            flex: 1;
+            min-width: 0;
+            background: #FAFAFA;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+            position: relative;
+        }
+
+        .product-shot {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-shot img,
+        .product-shot video {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        /* CAJA DE COMPRA / MERCADO LIBRE */
+        .buy-box {
+            padding: 24px;
+            background: #FFFFFF;
+            border: 2px solid #FFE600;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .buy-box-header h3 {
+            font-size: 1.45rem;
+            color: var(--header-navy);
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .buy-box-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .pack-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .pack-card {
+            position: relative;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pack-card.featured {
+            background: #FFFDF0;
+            border: 2px solid #FFE600;
+            box-shadow: 0 6px 18px rgba(255, 230, 0, 0.25);
+        }
+
+        .featured-ribbon {
+            position: absolute;
+            top: -12px;
+            left: 16px;
+            background: var(--header-navy);
+            color: #FFF;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .pack-image-container {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #FFF;
+            border: 1px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pack-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pack-info {
+            flex: 1 1 160px;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .pack-badge-light {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6B7280;
+            text-transform: uppercase;
+        }
+
+        .pack-badge-featured {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #D97706;
+            text-transform: uppercase;
+        }
+
+        .pack-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1F2937;
+        }
+
+        .pack-info .price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--header-navy);
+            margin: 2px 0;
+        }
+
+        .price-discount {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #15803D;
+            font-weight: 700;
+            background: #DCFCE7;
+            padding: 2px 6px;
+            border-radius: 6px;
+            vertical-align: middle;
+        }
+
+        .pack-meta {
+            font-size: 0.8rem;
+            color: #6B7280;
+        }
+
+        .pack-action {
+            flex-shrink: 0;
+            width: auto;
+        }
+
+        .btn-meli {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFE600;
+            color: var(--header-navy);
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .btn-meli span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            line-height: 1;
+            opacity: 0.9;
+        }
+
+        .btn-meli strong {
+            font-size: 0.9rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .btn-meli:hover {
+            background-color: #F5DC00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-meli-highlight {
+            background-color: #FFE600;
+            border: 1px solid #E6CF00;
+        }
+
+        .buy-trust-footer {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4B5563;
+            font-weight: 600;
+            border-top: 1px solid #F3F4F6;
+            padding-top: 12px;
+        }
+
+        /* SECCIONES GENERALES */
+        .section {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 35px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border-light);
+        }
+
+        .section-title,
+        .block-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--header-navy);
+            margin-bottom: 12px;
+        }
+
+        .block-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* ACORDEÓN / DETALLES DEL PRODUCTO */
+        .accordion-item {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--header-navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            user-select: none;
+            transition: color 0.2s ease;
+            gap: 12px;
+        }
+
+        .accordion-header:hover {
+            color: #2E3E75;
+        }
+
+        .accordion-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .accordion-icon-toggle {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--header-navy);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.3s ease;
+            opacity: 0;
+            padding: 0;
+        }
+
+        .accordion-item.active .accordion-body {
+            max-height: 2000px;
+            opacity: 1;
+            padding: 0 0 25px 0;
+        }
+
+        .accordion-item.active .accordion-icon-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-description-text {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .key-benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .benefit-check {
+            width: 24px;
+            height: 24px;
+            background-color: var(--green-bg);
+            color: var(--brand-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .guarantee-box {
+            background-color: var(--bg-accent-box);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            gap: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--header-navy);
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        /* MODO DE USO / TARJETAS */
+        .usage-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--header-navy);
+            text-align: center;
+            margin: 10px 0 20px;
+        }
+
+        .usage-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .usage-step-card {
+            background: linear-gradient(180deg, #fdfbf9 0%, #f6f1ea 100%);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+
+        .usage-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--header-navy);
+            color: white;
+            font-weight: 800;
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        .usage-step-card h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .usage-step-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* GRID DE BENEFICIOS */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .benefit-card {
+            background: var(--bg-offer-box);
+            padding: 15px 18px;
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+
+        .benefit-card h4 {
+            font-size: 15px;
+            color: var(--header-navy);
+            margin-bottom: 4px;
+        }
+
+        .benefit-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* PASOS DE APLICACION */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step-card {
+            background: var(--bg-offer-box);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px 16px 20px 16px;
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--header-navy);
+            color: #FFFFFF;
+            font-weight: 800;
+            font-size: 12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .step-card h4 {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--header-navy);
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* MÉTODOS MULTIUSO */
+        .banner-water-alert {
+            background-color: #FFF0F0;
+            border: 1px solid #FECACA;
+            color: #DC2626;
+            font-weight: 800;
+            font-size: 13px;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 25px;
+        }
+
+        .multiuso-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .multiuso-card {
+            background: var(--bg-offer-box);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px 16px 20px 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .multiuso-icon {
+            width: 55px;
+            height: 55px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .multiuso-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .multiuso-card h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--header-navy);
+            margin-bottom: 6px;
+        }
+
+        .multiuso-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* PRUEBA SOCIAL / STATS */
+        .stats-card {
+            background-color: var(--header-navy);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 35px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .stat-badge {
+            border: 3px solid var(--accent-yellow);
+            color: var(--accent-yellow);
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        /* PREGUNTAS FRECUENTES (FAQ) */
+        .faq-section {
+            margin: 40px 0;
+        }
+
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-faq-card);
+            border-radius: 14px;
+            padding: 22px 26px;
+            border: 1px solid rgba(226, 211, 196, 0.5);
+        }
+
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            gap: 12px;
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1F1F1F;
+        }
+
+        .faq-icon {
+            color: var(--brand-orange);
+            font-size: 14px;
+            font-weight: 800;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, opacity 0.25s ease-out, margin-top 0.25s ease-out;
+            opacity: 0;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-body {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* SECCIÓN COMPARATIVA (UNIFICADA) */
+        .comparison-container {
+            background-color: #FFFDF0;
+            padding: 50px 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .comparison-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .comp-heading {
+            font-size: 30px;
+            font-weight: 800;
+            color: #1F1F1F;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .comp-description {
+            font-size: 15px;
+            color: #555555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-comp-yellow {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: #1F1F1F;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            border: 2px solid #222222;
+            text-decoration: none;
+            transition: transform 0.1s ease;
+            text-align: center;
+        }
+
+        .btn-comp-yellow:hover {
+            transform: translateY(-1px);
+            background-color: var(--yellow-hover);
+        }
+
+        .comparison-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .comp-card-table {
+            width: 100%;
+            min-width: 420px;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #FFFFFF;
+            border: 1px solid #E0B280;
+            border-radius: 16px;
+        }
+
+        .comp-card-table th,
+        .comp-card-table td {
+            padding: 14px 10px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .comp-card-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .col-feature {
+            width: 48%;
+        }
+
+        .col-our-product {
+            width: 28%;
+        }
+
+        .col-others {
+            width: 24%;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .feature-text {
+            text-align: left !important;
+            padding-left: 16px !important;
+            font-weight: 600;
+            color: #222222;
+            white-space: normal !important;
+            word-break: break-word;
+        }
+
+        .floating-header {
+            background-color: var(--accent-yellow);
+            color: #1F1F1F;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 12px 6px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .highlight-cell {
+            background-color: #FFF2A3;
+            font-weight: bold;
+        }
+
+        .icon-check {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid #222222;
+            border-radius: 50%;
+            font-size: 11px;
+            color: #222222;
+            font-weight: 900;
+        }
+
+        .icon-cross {
+            color: #E53935;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVIDAD GENERAL */
+        @media (max-width: 900px) {
+            .steps-grid,
+            .multiuso-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 820px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .comparison-container {
+                padding: 24px 16px;
+            }
+
+            .comparison-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .comp-heading {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .comp-description {
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .comparison-text-side {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-comp-yellow {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .comp-card-table th,
+            .comp-card-table td {
+                font-size: 12px;
+                padding: 10px 6px;
+            }
+
+            .feature-text {
+                padding-left: 10px !important;
+            }
+
+            .floating-header {
+                font-size: 11px;
+                padding: 8px 4px;
+            }
+
+            .stats-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .pack-card {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .pack-image-container {
+                width: 100%;
+                height: 140px;
+                align-self: center;
+                max-width: 160px;
+            }
+
+            .pack-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .pack-action {
+                width: 100%;
+            }
+
+            .btn-meli {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .featured-ribbon {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .usage-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .steps-grid,
+            .multiuso-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guarantee-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .accordion-header {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo-wrap">
+                <a href="../../../index.html" class="logo" aria-label="TuCompraOK">
+                    <span class="logo-icon">
+                        <img src="../../../assets/img/logos/logo_fondo_transp_rectangular.png" alt="TuCompraOK" />
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMBS -->
+    <div class="breadcrumbs">
+        <a href="#">Inicio</a> / <a href="#">Aseo Ecológico</a> / Ácido Cítrico Anhidro USP
+    </div>
+
+    <!-- SECCIÓN GALERÍA Y OFERTAS DE COMPRA -->
+    <main class="container">
+        <div class="info-grid">
+
+            <!-- PANEL IZQUIERDO: GALERÍA DE IMÁGENES -->
+            <section class="gallery-panel" aria-label="Galería del producto">
+                <div class="thumbs">
+                    <button class="thumb active" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/acido_citrico/principal.png"
+                        aria-label="Ver imagen principal">
+                        <img src="../../../assets/img/productos/acido_citrico/principal.png"
+                            alt="Ácido Cítrico Anhidro USP" />
+                    </button>
+                    <button class="thumb is-video" type="button" data-type="video"
+                        data-src="../../../assets/videos/acido_citrico_video.mp4" aria-label="Ver video del producto">
+                        <img src="../../../assets/img/productos/acido_citrico/principal.png"
+                            alt="Video descalcificando con ácido cítrico" />
+                    </button>
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/acido_citrico/presentacion_500g.png"
+                        aria-label="Ver producto 500g">
+                        <img src="../../../assets/img/productos/acido_citrico/presentacion_500g.png"
+                            alt="Ácido Cítrico presentación 500g" />
+                    </button>
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/acido_citrico/pack_3.png"
+                        aria-label="Ver pack de 3 unidades">
+                        <img src="../../../assets/img/productos/acido_citrico/pack_3.png"
+                            alt="Pack de 3 Ácido Cítrico" />
+                    </button>
+                    <button class="thumb" type="button" data-type="image"
+                        data-src="../../../assets/img/productos/acido_citrico/ejemplo_hervidor.jpeg"
+                        aria-label="Ver ejemplo de uso en hervidor">
+                        <img src="../../../assets/img/productos/acido_citrico/ejemplo_hervidor.jpeg"
+                            alt="Ejemplo de uso limpiando sarro" />
+                    </button>
+                </div>
+                <div class="thumb-hint" aria-hidden="true">Desliza para ver más</div>
+
+                <div class="main-image-shell">
+                    <div class="product-shot">
+                        <img id="mainMediaImage"
+                            src="../../../assets/img/productos/acido_citrico/principal.png"
+                            alt="Ácido Cítrico Anhidro USP" />
+                        <video id="mainMediaVideo" src="../../../assets/videos/acido_citrico_video.mp4" controls
+                            playsinline style="display:none;"></video>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL DERECHO: TARJETA DE OPCIONES DE COMPRA -->
+            <aside class="buy-box" id="comprar">
+                <div class="buy-box-header">
+                    <h3>⚡ ¡Elimina el sarro naturalmente!</h3>
+                    <p class="buy-box-subtitle">Selecciona la opción que mejor te convenga y compra directamente en
+                        Mercado Libre.</p>
+                </div>
+
+                <div class="pack-grid">
+                    <!-- OFERTA 1: 500 g -->
+                    <div class="pack-card">
+                        <div class="pack-image-container">
+                            <img src="../../../assets/img/productos/acido_citrico/presentacion_500g.png"
+                                alt="Ácido Cítrico 500g" class="pack-thumb" />
+                        </div>
+                        <div class="pack-info">
+                            <span class="pack-badge-light">Formato Individual</span>
+                            <span class="pack-name">Oferta 1 • 500 g</span>
+                            <div class="price">$4.900</div>
+                            <span class="pack-meta">Para la limpieza profunda del hogar</span>
+                        </div>
+                        <div class="pack-action">
+                            <a href="#" target="_blank" rel="noopener" class="btn-meli">
+                                <span>Comprar en</span>
+                                <strong>Mercado Libre ➔</strong>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- OFERTA 2: PACK 3x500g (DESTACADO) -->
+                    <div class="pack-card featured">
+                        <div class="featured-ribbon">🔥 MÁS VENDIDO</div>
+                        <div class="pack-image-container">
+                            <img src="../../../assets/img/productos/acido_citrico/pack_3.png"
+                                alt="Pack de 3" class="pack-thumb" />
+                        </div>
+                        <div class="pack-info">
+                            <span class="pack-badge-featured">Pack Ahorro</span>
+                            <span class="pack-name">Oferta 2 • Pack 1.5 Kilos</span>
+                            <div class="price">$12.900 <span class="price-discount">¡Ahorras más!</span></div>
+                            <span class="pack-meta">Ideal para ahorrar y usar como suavizante</span>
+                        </div>
+                        <div class="pack-action">
+                            <a href="#" target="_blank" rel="noopener" class="btn-meli btn-meli-highlight">
+                                <span>Comprar Pack en</span>
+                                <strong>Mercado Libre ➔</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buy-trust-footer">
+                    <span>🔒 Compra 100% Segura y Protegida por Mercado Pago</span>
+                </div>
+            </aside>
+
+        </div>
+
+        <!-- SECCIÓN ACORDEÓN DETALLES -->
+        <section class="section" id="detalle-producto">
+
+            <!-- PESTAÑA 1: DESCRIPCIÓN -->
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <div class="accordion-title-wrap">
+                        <span>📝</span>
+                        <span>Descripción del producto</span>
+                    </div>
+                    <span class="accordion-icon-toggle">−</span>
+                </div>
+
+                <div class="accordion-body">
+                    <p class="accordion-description-text">
+                        El <strong>Ácido Cítrico Anhidro USP</strong> de TuCompraOK es el aliado ecológico definitivo 
+                        contra el sarro, la cal y la oxidación. Obtenido de fuentes naturales como los cítricos, actúa como 
+                        un potente descalcificador, abrillantador de metales y suavizante natural de telas.
+                    </p>
+
+                    <div class="key-benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Hervidores y cafeteras → libres de sarro e incrustaciones minerales en minutos.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Mamparas de baño opacas → vuelven a estar brillantes y transparentes.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Griferías y metales → pulidos y resplandecientes sin rayar la superficie.</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-check">✓</span>
+                            <span>Libre de tóxicos → alternativa natural y biodegradable que no irrita las vías respiratorias.</span>
+                        </div>
+                    </div>
+
+                    <div class="guarantee-box">
+                        <div class="guarantee-item">
+                            <span>🚚</span>
+                            <span>Envío a todo Chile</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span>🔒</span>
+                            <span>Compra protegida por Mercado Libre</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span>⭐</span>
+                            <span>Garantía de vendedor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑA 2: MODO DE USO -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title-wrap">
+                        <span>🧼</span>
+                        <span>Modo de uso recomendado</span>
+                    </div>
+                    <span class="accordion-icon-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <h3 class="usage-title">Modo de uso general</h3>
+                    <div class="usage-steps-grid">
+                        <div class="usage-step-card">
+                            <span class="usage-step-number">1</span>
+                            <h4>Solución Descalcificadora</h4>
+                            <p>Disuelve 2 a 3 cucharadas en 1 litro de agua tibia o caliente para crear tu propio spray limpiador.</p>
+                        </div>
+                        <div class="usage-step-card">
+                            <span class="usage-step-number">2</span>
+                            <h4>Suavizante Natural</h4>
+                            <p>Diluye 100g de ácido cítrico en 1 litro de agua. Usa 50ml de esta mezcla en el compartimento del suavizante de tu lavadora.</p>
+                        </div>
+                        <div class="usage-step-card">
+                            <span class="usage-step-number">3</span>
+                            <h4>Limpieza de Hervidores</h4>
+                            <p>Llena el hervidor con agua, agrega 2 cucharadas, hierve y deja reposar 15 minutos. Enjuaga bien.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑA 3: ENVÍOS -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title-wrap">
+                        <span>🚚</span>
+                        <span>Envíos y cobertura</span>
+                    </div>
+                    <span class="accordion-icon-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <p class="accordion-description-text">
+                        Realizamos envíos a todo Chile a través de Mercado Envíos. Los despachos dentro de la Región
+                        Metropolitana llegan en 24 a 48 horas hábiles.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN 5 BENEFICIOS -->
+        <section class="section">
+            <h3 class="block-title">5 beneficios reales del Ácido Cítrico</h3>
+            <p class="block-subtitle">El sustituto natural a los limpiadores químicos agresivos.</p>
+
+            <div class="benefits-grid">
+                <img src="../../../assets/img/productos/acido_citrico/ejemplo_hervidor.jpeg"
+                    style="width: 100%; border-radius: 12px;" alt="Limpieza de sarro eficiente">
+                <div>
+                    <div class="benefit-card">
+                        <h4>1. Poder Quitasarro</h4>
+                        <p>Descompone la cal acumulada por el agua dura en baños, cocinas y electrodomésticos.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>2. Suavizante Ecológico</h4>
+                        <p>Elimina los residuos de detergente en la ropa, dejando las fibras naturalmente suaves sin químicos.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>3. Abrillantador Natural</h4>
+                        <p>Devuelve el brillo a grifos de acero inoxidable, metales y cristales opacos.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>4. 100% Biodegradable</h4>
+                        <p>De origen vegetal, es completamente seguro para el medio ambiente tras su uso.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>5. Sin gases tóxicos</h4>
+                        <p>A diferencia de los quitasarros convencionales, no emite vapores nocivos al respirar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SPRAY QUITASARRO -->
+        <section class="section" id="spray-quitasarro">
+            <h3 class="section-title">¿Cómo hacer tu Solución Descalcificadora?</h3>
+            <div class="steps-grid">
+
+                <article class="step-card">
+                    <span class="step-badge">1</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_mezcla.png"
+                            alt="Preparar solución" />
+                    </div>
+                    <h4>PREPARAR</h4>
+                    <p>Disuelve <strong>2 o 3 cucharadas</strong> en 1 litro de agua tibia dentro de un atomizador o botella.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">2</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_spray.png"
+                            alt="Pulverizar" />
+                    </div>
+                    <h4>APLICAR</h4>
+                    <p>Rocía directamente sobre griferías, azulejos, inodoros o mamparas con sarro.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">3</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_reloj.png"
+                            alt="Esperar" />
+                    </div>
+                    <h4>ESPERAR</h4>
+                    <p>Deja actuar por <strong>10 a 15 minutos</strong> para que el ácido disuelva la cal.</p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-badge">4</span>
+                    <div class="step-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_brillo.png"
+                            alt="Enjuagar" />
+                    </div>
+                    <h4>ENJUAGAR</h4>
+                    <p>Frota con una esponja suave y enjuaga con agua limpia. ¡Brillo instantáneo!</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN MÉTODOS MULTIUSO -->
+        <section class="section" id="metodos-multiuso">
+            <h3 class="section-title">Usos Mágicos en el Hogar</h3>
+
+            <div class="banner-water-alert">
+                ⚠️ NUNCA MEZCLAR DIRECTAMENTE CON PERCARBONATO DE SODIO: SE NEUTRALIZAN Y PIERDEN EFECTO.
+            </div>
+
+            <div class="multiuso-grid">
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_hervidor.png"
+                            alt="Hervidores y Cafeteras" />
+                    </div>
+                    <h4>Electrodomésticos</h4>
+                    <p>Ideal para descalcificar el fondo de <strong>hervidores y cafeteras</strong> periódicamente.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_mampara.png" alt="Baños" />
+                    </div>
+                    <h4>Baño y Mamparas</h4>
+                    <p>Elimina las gotas de agua seca y sarro incrustado en los vidrios de la ducha.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_suavizante.png"
+                            alt="Lavadora" />
+                    </div>
+                    <h4>Suavizante Natural</h4>
+                    <p>Reemplaza tu suavizante comercial; elimina restos de jabón y cuida tu ropa y tu piel.</p>
+                </article>
+
+                <article class="multiuso-card">
+                    <div class="multiuso-icon">
+                        <img src="../../../assets/img/iconos/acido_citrico/icono_ollas.png"
+                            alt="Vajilla y ollas" />
+                    </div>
+                    <h4>Ollas y Sartenes</h4>
+                    <p>Saca brillo al fondo de ollas de acero inoxidable que han quedado opacas por el calor.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN COMPARATIVA -->
+        <section class="comparison-container">
+            <div class="comparison-content">
+                <div class="comparison-text-side">
+                    <h2 class="comp-heading">Dile adiós a los descalcificadores tóxicos</h2>
+                    <p class="comp-description">
+                        Los productos quitasarro de supermercado están llenos de químicos corrosivos que irritan los pulmones y la piel. El Ácido Cítrico Anhidro es un producto de grado alimenticio que destruye la cal de forma natural y segura para toda tu familia.
+                    </p>
+                    <a href="#comprar" class="btn-comp-yellow">COMPRAR AHORA</a>
+                </div>
+
+                <div class="comparison-table-wrapper">
+                    <table class="comp-card-table">
+                        <thead>
+                            <tr>
+                                <th class="col-feature"></th>
+                                <th class="col-our-product">
+                                    <div class="floating-header">Ácido Cítrico</div>
+                                </th>
+                                <th class="col-others">Quitasarro Comercial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-text">Disuelve sarro eficientemente</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-check" style="border-color:#666; color:#666;">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Sin vapores tóxicos</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Seguro para hervidores (grado USP)</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Multiuso (suavizante, limpiavidrios)</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                            <tr>
+                                <td class="feature-text">Amigable con el medio ambiente</td>
+                                <td class="highlight-cell"><span class="icon-check">✓</span></td>
+                                <td><span class="icon-cross">✕</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PRUEBA SOCIAL / STATS -->
+        <section class="stats-card">
+            <div>
+                <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">El favorito para el baño</h3>
+                <p style="font-size: 13px; color: #D0D7DE;">Nuestros clientes no vuelven a comprar productos químicos después de probar su efectividad.</p>
+            </div>
+            <div>
+                <div class="stat-row">
+                    <div class="stat-badge">98%</div>
+                    <div style="font-size: 13px;">Eliminó por completo el <strong>sarro del hervidor</strong> en 15 minutos.</div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-badge">94%</div>
+                    <div style="font-size: 13px;">Notaron sus <strong>griferías y mamparas</strong> relucientes al instante.</div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-badge">92%</div>
+                    <div style="font-size: 13px;">Lo utilizan con éxito como reemplazo de su <strong>suavizante de ropa</strong>.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="faq-section" aria-label="Preguntas frecuentes">
+            <h2 class="section-title" style="margin-bottom: 30px;">Preguntas frecuentes</h2>
+
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Puedo mezclar el Ácido Cítrico con Percarbonato?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            <strong>¡No! Nunca los mezcles en el mismo envase.</strong> El percarbonato es alcalino y el ácido cítrico es, lógicamente, un ácido. Al mezclarse en agua, reaccionan creando efervescencia y neutralizándose mutuamente, por lo que ambos pierden su poder de limpieza. Úsalos en tareas o etapas separadas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Es seguro para usar en hervidores y máquinas de café?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            Totalmente seguro. Nuestro Ácido Cítrico es de grado USP (aprobado para contacto con alimentos). Es la forma más sana y ecológica de retirar el sarro acumulado donde hierves el agua que consumes. Solo asegúrate de enjuagar bien después de descalcificar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Cómo funciona como suavizante de ropa?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            Actúa equilibrando el pH del agua y disolviendo los restos de jabón o minerales del agua dura que hacen que las prendas queden rígidas. Prepara una dilución (100g en 1 Litro de agua) y usa una tapita en el compartimento del suavizante de tu lavadora. La ropa saldrá suave y sin olores artificiales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Tiene fecha de caducidad o cómo debo guardarlo?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            El ácido cítrico no caduca rápidamente si se almacena bien. Como es un producto higroscópico (absorbe la humedad del ambiente), es muy importante que lo guardes en su envase bien cerrado, en un lugar fresco y sin humedad. De lo contrario, podría formar terrones o apelmazarse, aunque seguiría siendo efectivo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h3 class="faq-question">¿Puedo usarlo en superficies de mármol o granito natural?</h3>
+                        <span class="faq-icon">▲</span>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">
+                            No es recomendable. Al ser un ácido, puede corroer, manchar o quitarle el brillo natural a piedras calcáreas como el mármol, travertino o granito sin sellar. Para esas superficies, utiliza un limpiador con pH neutro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPTS INTERACTIVOS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Galería de Imágenes y Video
+            const thumbs = document.querySelectorAll('.thumb');
+            const mainImg = document.getElementById('mainMediaImage');
+            const mainVideo = document.getElementById('mainMediaVideo');
+
+            thumbs.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbs.forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+
+                    const type = thumb.dataset.type;
+                    const src = thumb.dataset.src;
+
+                    if (type === 'video') {
+                        mainImg.style.display = 'none';
+                        mainVideo.style.display = 'block';
+                        mainVideo.src = src;
+                        mainVideo.play();
+                    } else {
+                        mainVideo.pause();
+                        mainVideo.style.display = 'none';
+                        mainImg.style.display = 'block';
+                        mainImg.src = src;
+                    }
+                });
+            });
+
+            // 2. Acordeón General de Productos
+            const accordionHeaders = document.querySelectorAll('#detalle-producto .accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const currentItem = header.parentElement;
+                    const toggleIcon = header.querySelector('.accordion-icon-toggle');
+                    const isActive = currentItem.classList.contains('active');
+
+                    if (isActive) {
+                        currentItem.classList.remove('active');
+                        toggleIcon.textContent = '+';
+                    } else {
+                        currentItem.classList.add('active');
+                        toggleIcon.textContent = '−';
+                    }
+                });
+            });
+
+            // 3. Acordeón de Preguntas Frecuentes (FAQ)
+            const faqHeaders = document.querySelectorAll('.faq-header');
+            faqHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const faqItem = header.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
